@@ -18,7 +18,7 @@
 
   'label_field':
     'prefix': 'fl'
-    'body': '<%= f.label :${1:field_1}, class: "${2:form-label}" %>'
+    'body': '<%= f.label :${1:field_1}, class: "${2:control-label}" %>'
 
   'text_field':
     'prefix': 'ftf'
@@ -36,13 +36,21 @@
     'prefix': 'fnf'
     'body': '<%= f.number_field :${1:field_1}, class: "${2:form-control}" %>'
 
-  'datetime_field':
-    'prefix': 'fdt'
-    'body': '<%= f.datetime_field :${1:field_1}, class: "${2:form-control}" %>'
-
   'text_area':
     'prefix': 'fta'
     'body': '<%= f.text_area :${1:field_1}, class: "${2:form-control}" %>'
+
+  'date_select':
+    'prefix': 'fds'
+    'body': '<%= f.date_select :${1:field_1}, class: "${2:form-control}" %>'
+
+  'datetime_select':
+    'prefix': 'fdts'
+    'body': '<%= f.datetime_select :${1:field_1}, class: "${2:form-control}" %>'
+
+  'datetime_select':
+    'prefix': 'fdts'
+    'body': '<%= f.datetime_select :${1:field_1}, class: "${2:form-control}" %>'
 
   'collection_select':
     'prefix': 'fcs'
@@ -77,9 +85,13 @@
       ) %>
     """
 
+  'file_field':
+    'prefix': 'fff'
+    'body': '<%= f.file_field :${1:file}, accept: "${2:video/mp4}", class: "form-control" %>'
+
   'submit_field':
     'prefix': 'fs'
-    'body': '<%= f.submit :${1:field_1} %>'
+    'body': '<%= f.submit "${1:Save / Update}", class: "${2: btn btn-success"} %>'
 
   'input':
     'prefix': 'input'
