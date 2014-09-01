@@ -36,13 +36,46 @@
     'prefix': 'fnf'
     'body': '<%= f.number_field :${1:field_1}, class: "${2:form-control}" %>'
 
+  'datetime_field':
+    'prefix': 'fdt'
+    'body': '<%= f.datetime_field :${1:field_1}, class: "${2:form-control}" %>'
+
   'text_area':
     'prefix': 'fta'
     'body': '<%= f.text_area :${1:field_1}, class: "${2:form-control}" %>'
 
+  'collection_select':
+    'prefix': 'fcs'
+    'body': """
+      <%= f.collection_select(
+            :${1:resource_id},
+            @${2:collection},
+            :${3:id},
+            :${4:name},
+            {
+              include_blank: "${6:Please select one}"
+            },
+            { class: "${6:form-control}" }
+      ) %>
+    """
+
   'select_field':
     'prefix': 'fsf'
-    'body': '<%= f.select :${1:field_1}, options_from_collection_for_select(@${2:array}, "${3:id}", "${4:name}", @${4:form_object.selected_id}) ,{}, {:class => "${5:form-control}" }) %>'
+    'body': """
+      <%= f.select(
+          :${1:resource_id},
+          options_from_collection_for_select(
+            @${2:collection},
+            "${3:id}",
+            "${4:name}",
+            @${4:form_object.${1:resource_id}}
+          ),
+          {
+            include_blank: "${5:Please select one}"
+          },
+          { class: "${6:form-control}" }
+      ) %>
+    """
 
   'submit_field':
     'prefix': 'fs'
