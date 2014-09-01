@@ -100,6 +100,28 @@
       <% end
     """
 
+  'if statement':
+    'prefix': 'if'
+    'body': """
+      <% if ${1:true} %>
+        ${2:<!-- true -->}
+      <% end %>
+    """
+
+  'if else statement':
+    'prefix': 'ife'
+    'body': """
+      <% if ${1:true} %>
+        ${2:<!-- true -->}
+      <% else %>
+        ${3:<!-- false -->}
+      <% end %>
+    """
+
+  'else statement':
+    'prefix': 'else'
+    'body': 'elsif true'
+
   'end':
     'prefix': 'end'
     'body': '<% end %>'
