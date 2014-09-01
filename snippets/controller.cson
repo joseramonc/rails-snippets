@@ -12,3 +12,19 @@
         format.json { render :json => @$1{resource} }
       end
     """
+
+  'skip_before_action':
+    'prefix': 'sba'
+    'body': 'skip_before_action :${1:method_name}, only: [:${2:index}]'
+
+  'skip_before_filter':
+    'prefix': 'sbf'
+    'body': 'skip_before_filter :${1:method_name}, only: [:${2:index}]'
+
+  'before_action':
+    'prefix': 'ba'
+    'body': 'before_action :${1:method_name}, only: [:${2:index}]'
+
+  'before_filter':
+    'prefix': 'bf'
+    'body': 'before_filter :${1:method_name}, only: [:${2:index}]'
