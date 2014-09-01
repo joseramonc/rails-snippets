@@ -4,7 +4,7 @@
     'prefix': 'form_for'
     'body': """
       <%= form_for ${1} do |f| %>
-        ${2:f.text_field :field_1}
+        ${2:<%= f.text_field :field_1 %>}
       <% end %>
     """
 
