@@ -1,5 +1,13 @@
 # railsteroids package
 
-A short description of your package.
+Snippets for ruby on rails, contributions are greatly appreciated, if you have any snippet that you would like to add just [open an issue](https://github.com/joseramonc/railsteroids/issues), I would :heart: to merge your favorite snippets.
 
-![A screenshot of your spankin' package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+Please fork this repository and open a pull request to add / improve snippets.
+
+## Snippets list
+
+### Views (.html.erb)
+<!-- * <kbd>rp</kbd> + <kbd>tab</kbd> = `<%= render "partial" %>`
+* <kbd>lt</kbd> + <kbd>tab</kbd> = `<%= link_to "partial" %>` -->
+
+### Ruby files (.rb)
