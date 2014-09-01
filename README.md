@@ -1,6 +1,5 @@
-# railsteroids package
-
-Snippets for ruby on rails projects, contributions are greatly appreciated, if your favorite snippets is missing [open an issue](https://github.com/joseramonc/railsteroids/issues) or send a pull request, I would :heart: to merge your favorite snippets.
+# rails-snippets package
+An [Atom](https://atom.io) package to add snippets for ruby on rails projects, contributions are greatly appreciated, if your favorite snippets are missing [open an issue](https://github.com/joseramonc/railsteroids/issues) or send a pull request, I would :heart: to merge your favorite snippets.
 
 Please fork this repository and open a pull request to add / improve snippets.
 
@@ -16,4 +15,4 @@ Also if the method has an optional block like `content_tag` (snippet is `ct`), i
 
 ## Snippets list
 
-A complete list of snippets can be seen in Settings > Packages > railsteroids
+A complete list of snippets can be seen in Settings > Packages > rails-snippets
