@@ -1,0 +1,25 @@
+'.source.ruby':
+
+  'has_many':
+    'prefix': 'hm'
+    'body': 'has_many :${1:categories}'
+
+  'has_one':
+    'prefix': 'ho'
+    'body': 'has_one :${1:category}'
+
+  'has_many_through':
+    'prefix': 'hmt'
+    'body': 'has_many :${1:categories}, through: ${2:categorizations}$3'
+
+  'has_and_belongs_to_many':
+    'prefix': 'habtm'
+    'body': 'has_and_belongs_to_many :${1:categories}, join_table: "${2:categories_products}"$3'
+
+  'accepts_nested_attributes_for':
+    'prefix': 'anaf'
+    'body': 'accepts_nested_attributes_for :${1:relationship}${2:, allow_destroy\: true}$3'
+
+  'belongs_to':
+    'prefix': 'bt'
+    'body': 'belongs_to :${1:category}'

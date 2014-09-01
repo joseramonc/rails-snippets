@@ -1,0 +1,34 @@
+# this snippets are sensitive defaults when working with rails, are intended to
+# be used when the selected syntax is different thatn Ruby.
+'.source.ruby':
+  'it':
+    'prefix': 'it'
+    'body': 'it "should $1" do\n\t$2\nend'
+
+  'describe':
+    'prefix': 'describe'
+    'body': 'describe \'when $1\' do\n\t$2\nend'
+
+  'class':
+    'prefix': 'class'
+    'body': """
+      class ${1:ClassName} ${2:< ActiveRecord::Base}
+        ${3:\#code}
+      end
+    """
+
+  'module':
+    'prefix': 'module'
+    'body': """
+      module ${1:ModuleName}
+        ${2:\#code}
+      end
+    """
+
+  'def':
+    'prefix': 'def' #just if youre using the non official ruby syntax
+    'body': """
+      def ${1:method}
+        ${2:\#code}
+      end
+    """

@@ -1,0 +1,105 @@
+'.source.ruby.rails, .text.html.ruby, .text.html.erb, .source.js.rails':
+  'erb_render_block':
+    'prefix': '='
+    'body': '<%= $1 %>'
+
+'.source.ruby.rails, .text.html.ruby, .text.html.erb':
+  'erb_exec_block':
+    'prefix': '-'
+    'body': '<% $1 %>'
+
+  'erb_loop_block':
+    'prefix': '=loop'
+    'body': """
+      <% ${1:array}.each do |${2:element}| %>
+        <%= $3 %>
+      <% end %>
+    """
+
+  'link_to':
+    'prefix': 'lt'
+    'body': '<%= link_to "${1:name}", ${2:path} %>'
+
+  'link_to_block':
+    'prefix': 'ltblock'
+    'body': """
+      <%= link_to ${1:path} do %>
+        ${2:<!-- content -->}
+      <% end %>
+    """
+
+  'image_tag':
+    'prefix': 'image'
+    'body': '<%= image_tag $1 %>'
+
+  'render (partial)':
+    'prefix': 'rp'
+    'body': '<%= render "${1:partial}" %>'
+
+  'render (partial, locals)':
+    'prefix': 'rpl'
+    'body': '<%= render "${1:item}", ${2:variable}: {3:object} $3 %>'
+
+  'content_tag':
+    'prefix': 'ct'
+    'body': '<%= content_tag :${1:div}, ${2:nil}, ${3:key}: "${4:value}" %>'
+
+  'content_tag_block':
+    'prefix': 'ctblock'
+    'body': """
+      <%= content_tag :${1:div}, ${2:key}: "${3:value}" do %>
+        ${4:<!-- content -->
+      <% end %>
+    """
+
+  'content_for':
+    'prefix': 'cf'
+    'body': """
+      <%= content_for :${1:block} do %>
+        ${2:<!-- content -->}
+      <% end %>
+    """
+
+  'yield':
+    'prefix': 'yield'
+    'body': '<%= yield :${1:block_name} %>'
+
+  'javascrit_include_tag':
+    'prefix': 'jit'
+    'body': '<%= javascript_include_tag "${1:file_name}", "data-turbolinks-track" => true %>'
+
+  'stylesheet_link_tag':
+    'prefix': 'slt'
+    'body': '<%= stylesheet_link_tag "${1:file_name}", media: "all", "data-turbolinks-track" => true %>'
+
+  'favicon_link_tag':
+    'prefix': 'flt'
+    'body': '<%= favicon_link_tag "favicon.ico" %>'
+
+  'embeded loop':
+    'prefix': ' do' #prefix (space)do is just to beat this snippet https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
+    'body': """
+      do |$1| %>
+        <%= $2 %>
+      <% end
+    """
+
+  '.each loop':
+    'prefix': '.each'
+    'body': """
+      .each do |$1| %>
+        <%= $2 %>
+      <% end
+    """
+
+  '.each with index':
+    'prefix': '.ewi'
+    'body': """
+      .each_with_index do |$1, index| %>
+        <%= $2 %>
+      <% end
+    """
+
+  'end':
+    'prefix': 'end'
+    'body': '<% end %>'

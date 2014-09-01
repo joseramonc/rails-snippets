@@ -1,0 +1,14 @@
+'.source.ruby':
+
+  'redirect_to':
+    'prefix': 'rt'
+    'body': 'redirect_to ${1:resource}_path'
+
+  'respond_to':
+    'prefix': 'respond'
+    'body': """
+      respond_to do |format|
+        format.html
+        format.json { render :json => @$1{resource} }
+      end
+    """

@@ -1,0 +1,53 @@
+'.source.ruby.rails, .text.html.ruby, .text.html.erb':
+
+  'form_for':
+    'prefix': 'form_for'
+    'body': """
+      <%= form_for ${1} do |f| %>
+        ${2:f.text_field :field_1}
+      <% end %>
+    """
+
+  'form_tag':
+    'prefix': 'form_tag'
+    'body': """
+      <%= form_tag negocios_path, :method => 'get', :class=>"navbar-form navbar-left search-form" do %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Buscar", :class => "form-control col-lg-8" %>
+      <% end %>
+    """
+
+  'label_field':
+    'prefix': 'fl'
+    'body': '<%= f.label :${1:field_1}, class: "${2:form-label}" %>'
+
+  'text_field':
+    'prefix': 'ftf'
+    'body': '<%= f.text_field :${1:field_1}, class: "${2:form-control}" %>'
+
+  'password_field':
+    'prefix': 'fpf'
+    'body': '<%= f.password_field :${1:field_1}, class: "${2:form-control}" %>'
+
+  'hidden_field':
+    'prefix': 'fhf'
+    'body': '<%= f.hidden_field :${1:field_1}, class: "${2:form-control}" %>'
+
+  'number_field':
+    'prefix': 'fnf'
+    'body': '<%= f.number_field :${1:field_1}, class: "${2:form-control}" %>'
+
+  'text_area':
+    'prefix': 'fta'
+    'body': '<%= f.text_area :${1:field_1}, class: "${2:form-control}" %>'
+
+  'select_field':
+    'prefix': 'fsf'
+    'body': '<%= f.select :${1:field_1}, options_from_collection_for_select(@${2:array}, "${3:id}", "${4:name}", @${4:form_object.selected_id}) ,{}, {:class => "${5:form-control}" }) %>'
+
+  'submit_field':
+    'prefix': 'fs'
+    'body': '<%= f.submit :${1:field_1} %>'
+
+  'input':
+    'prefix': 'input'
+    'body': '<%= f.${1:type}_field :${2:field_1} %>'

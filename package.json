@@ -1,10 +1,8 @@
 {
   "name": "railsteroids",
-  "main": "./lib/railsteroids",
   "version": "0.0.0",
-  "description": "A short description of your package",
-  "activationEvents": ["railsteroids:toggle"],
-  "repository": "https://github.com/atom/railsteroids",
+  "description": "Snippets for your ruby on rails projects.",
+  "repository": "https://github.com/joseramonc/railsteroids",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
