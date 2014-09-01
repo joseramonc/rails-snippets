@@ -11,8 +11,13 @@
   'form_tag':
     'prefix': 'form_tag'
     'body': """
-      <%= form_tag negocios_path, :method => 'get', :class=>"navbar-form navbar-left search-form" do %>
-        <%= text_field_tag :search, params[:search], :placeholder => "Buscar", :class => "form-control col-lg-8" %>
+      <%= form_tag ${1:submission_path}, :method => :${2:get}, class: "navbar-form navbar-left search-form" do %>
+        <%= text_field_tag(
+            :search,
+            params[:search],
+            placeholder: "Search",
+            class: "form-control"
+        ) %>
       <% end %>
     """
 
