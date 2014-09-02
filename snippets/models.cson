@@ -1,4 +1,4 @@
-'.source.ruby, .source.ruby.rails, .support.function.activerecord.rails':
+'.source.ruby, .source.ruby.rails, .meta.rails.model':
 
   'enum':
     'prefix': 'enum'
@@ -12,7 +12,27 @@
 
   'scope':
     'prefix': 'scope'
-    'body': 'scope :${1:scope_name}, -> { ${2:where(${3:field}: ${4:true})} } $5'
+    'body': 'scope :${1:scope_name}, ${2:where(${3:field}: ${4:true})} $5'
+
+  'scope_params':
+    'prefix': 'scopep'
+    'body': 'scope :${1:colored}, -> (${2:param}) { where(${3:attribute}: ${2:param}) }'
+
+  'scope_lambda':
+    'prefix': 'scopel'
+    'body': """
+      scope :${1:scope_name}, -> do
+        where(${2:"${3:created_at} ${4:>=} ?",} ${5:Time.now - 1.week}) }
+      end$6
+    """
+
+  'scope_joins':
+    'prefix': 'scopej'
+    'body': """
+      scope :${1:scope_name}, -> do |${2:attribute}|
+        joins(:${3:table_name}s).where(${3:field}: ${2:attribute})
+      end$5
+    """
 
   'default_scope':
     'prefix': 'ds'
