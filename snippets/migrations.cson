@@ -10,7 +10,7 @@
 
   'add_column':
     'prefix': 'ac'
-    'body': 'add_column :${1:table_name}, :${2:field_attribute}, :${3:type}'
+    'body': 'add_column :${1:table_name}, :${2:column_name}, :${3:type}'
 
   'drop_table':
     'prefix': 'dt'

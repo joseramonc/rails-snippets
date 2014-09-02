@@ -126,10 +126,6 @@
       <% end %>
     """
 
-  'else statement':
-    'prefix': 'else'
-    'body': 'elsif true'
-
   'end':
     'prefix': 'end'
     'body': '<% end %>'

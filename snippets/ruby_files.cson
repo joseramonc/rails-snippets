@@ -40,6 +40,19 @@
         ${3:\#code...}
       end $4
     """
+
+  'logger_info':
+    'prefix': 'li'
+    'body': 'logger.info $1'
+
+  'update_attribute':
+    'prefix': '.ua'
+    'body': '.update_attribute :${1:attribute}, "${2:new value}"'
+
+  'else statement':
+    'prefix': 'else'
+    'body': 'elsif ${1:true}'
+
   #just if not using atom official ruby syntax::
   'def':
     'prefix': 'def'
@@ -52,7 +65,7 @@
   'do_block':
     'prefix': 'do'
     'body': """
-      do |${1:member}|
-        $2
+      do ${2:|${1:member}|}
+        $3
       end
     """
