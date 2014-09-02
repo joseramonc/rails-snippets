@@ -1,6 +1,6 @@
 # this snippets are sensitive defaults when working with rails, are intended to
 # be used when the selected syntax is different thatn Ruby.
-'.source.ruby':
+'.source.ruby, .source.ruby.rails':
   'it':
     'prefix': 'it'
     'body': 'it "should $1" do\n\t$2\nend'
@@ -25,10 +25,34 @@
       end
     """
 
+  'each':
+    'prefix': '.e'
+    'body': """
+      .each do |${1:member}|
+        ${2:\#code...}
+      end $3
+    """
+
+  'each_with_index':
+    'prefix': '.ewi'
+    'body': """
+      .each_with_index do |${1:member}, ${2:index}|
+        ${3:\#code...}
+      end $4
+    """
+  #just if not using atom official ruby syntax::
   'def':
-    'prefix': 'def' #just if youre using the non official ruby syntax
+    'prefix': 'def'
     'body': """
       def ${1:method}
         ${2:\#code}
+      end
+    """
+
+  'do_block':
+    'prefix': 'do'
+    'body': """
+      do |${1:member}|
+        $2
       end
     """
