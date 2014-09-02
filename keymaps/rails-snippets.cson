@@ -1,0 +1,2 @@
+'.editor:not(.mini)':
+  'cmd->': 'rails-snippets:toggleErb'

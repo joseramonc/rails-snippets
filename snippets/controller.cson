@@ -5,11 +5,11 @@
     'body': 'redirect_to ${1:resource}_path'
 
   'respond_to':
-    'prefix': 'respond'
+    'prefix': 'respond_to'
     'body': """
       respond_to do |format|
         format.html
-        format.json { render :json => @$1{resource} }
+        format.json { render :json => @${1:resource} }
       end
     """
 

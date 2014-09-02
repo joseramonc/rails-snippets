@@ -8,16 +8,20 @@
       end
     """
 
+  'add_column':
+    'prefix': 'ac'
+    'body': 'add_column :${1:table_name}, :${2:field_attribute}, :${3:type}'
+
   'drop_table':
     'prefix': 'dt'
     'body': 'drop_table :${1:table_name}'
 
   'rename_column':
-    'prefix': 'rc'
+    'prefix': 'rnc'
     'body': 'rename_column :${1:table_name}, :${2:column_name}, :${3:new_column_name})'
 
   'remove_column':
-    'prefix': 'dc'
+    'prefix': 'rmc'
     'body': 'remove_column :${1:table_name}, :${2:column_name}'
 
   'change_column':

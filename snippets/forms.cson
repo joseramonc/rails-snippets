@@ -33,6 +33,10 @@
     'prefix': 'fpf'
     'body': '<%= f.password_field :${1:field_1}, class: "${2:form-control}" %>'
 
+  'email_select':
+    'prefix': 'fes'
+    'body': '<%= f.email_select :${1:field_1}, class: "${2:form-control}" %>'
+
   'hidden_field':
     'prefix': 'fhf'
     'body': '<%= f.hidden_field :${1:field_1}, class: "${2:form-control}" %>'
@@ -48,10 +52,6 @@
   'date_select':
     'prefix': 'fds'
     'body': '<%= f.date_select :${1:field_1}, class: "${2:form-control}" %>'
-
-  'datetime_select':
-    'prefix': 'fdts'
-    'body': '<%= f.datetime_select :${1:field_1}, class: "${2:form-control}" %>'
 
   'datetime_select':
     'prefix': 'fdts'

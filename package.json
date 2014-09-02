@@ -1,11 +1,17 @@
 {
   "name": "rails-snippets",
   "version": "0.0.3",
+  "main": "./lib/rails-snippets",
+  "activationEvents": [
+    "rails-snippets:toggleErb"
+  ],
   "description": "Snippets for your ruby on rails projects.",
   "repository": "https://github.com/joseramonc/rails-snippets",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "underscore-plus": "1.x"
+  }
 }
