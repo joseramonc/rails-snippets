@@ -10,6 +10,10 @@ Support for the great [package](https://github.com/eddorre/SublimeERB) by [@eddo
 
 ![demo](http://cl.ly/image/1P2E1x0h210l/toggle_erb.gif)
 
+Toggle with:  <kbd>cmd</kbd> + <kbd>></kbd>
+
+(In american keyboard: <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>.</kbd>)
+
 ## Conventions
 The conventions for the snippets are usually the initials for the method.
 
