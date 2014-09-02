@@ -1,4 +1,4 @@
-'.source.ruby':
+'.source.ruby, .source.ruby.rails':
 
   'has_many':
     'prefix': 'hm'

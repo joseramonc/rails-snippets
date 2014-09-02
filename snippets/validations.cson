@@ -1,4 +1,4 @@
-'.source.ruby':
+'.source.ruby, .source.ruby.rails':
 
   'generic_validation':
     'prefix': 'vs'
