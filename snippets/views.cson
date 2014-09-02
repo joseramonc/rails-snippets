@@ -18,7 +18,11 @@
 
   'link_to':
     'prefix': 'lt'
-    'body': '<%= link_to "${1:name}", ${2:path} %>'
+    'body': '<%= link_to "${1:name}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>'
+
+  'link_to_method':
+    'prefix': 'ltm'
+    'body': '<%= link_to "${1:name}", ${2:path}, method: :${3:post} %>'
 
   'link_to_block':
     'prefix': 'ltblock'
@@ -31,6 +35,10 @@
   'image_tag':
     'prefix': 'image'
     'body': '<%= image_tag $1 %>'
+
+  'image_tag_class':
+    'prefix': 'imagec'
+    'body': '<%= image_tag $1, class: "${2:img-responsive}" %>'
 
   'render (partial)':
     'prefix': 'rp'
@@ -125,3 +133,7 @@
   'end':
     'prefix': 'end'
     'body': '<% end %>'
+
+  'font_awesome_icon':
+    'prefix': 'icon'
+    'body': '<i class="${2:fa fa-${1:truck}}"></i>$3'

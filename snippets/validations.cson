@@ -1,0 +1,39 @@
+'.source.ruby':
+
+  'generic_validation':
+    'prefix': 'vs'
+    'body': 'validates :${1:field_1}, ${2:presence}: true'
+
+  'custom_validation':
+    'prefix': 've'
+    'body': """
+      validate :${1:method_name}
+
+      def ${1:method_name}
+        ${2: \#code...}
+      end
+    """
+
+  'validates_presence_of':
+    'prefix': 'vpo'
+    'body': 'validates_presence_of :${1:field}'
+
+  'validates_numericality_of':
+    'prefix': 'vno'
+    'body': 'validates_numericality_of :${1:field}'
+
+  'validtes_length_of':
+    'prefix': 'vlo'
+    'body': 'validates_length_of :${1:field}, minimum: ${2:1}, maximum: ${3:10}$4'
+
+  'validates_format_of':
+    'prefix': 'vfo'
+    'body': 'validates_format_of :${1:field}, with: ${2:REGEX}$3'
+
+  'validates_uniqueness_of':
+    'prefix': 'vuo'
+    'body': 'validates_uniqueness_of :${1:field}'
+
+  'validates_uniqueness_of_scope':
+    'prefix': 'vuos'
+    'body': 'validates_uniqueness_of :${1:field}, scope: :${2:other_field}'

@@ -4,6 +4,10 @@
     'prefix': 'hm'
     'body': 'has_many :${1:categories}'
 
+  'has_many_depedent':
+    'prefix': 'hmd'
+    'body': 'has_many :${1:categories}, dependent: ${2:destroy}'
+
   'has_one':
     'prefix': 'ho'
     'body': 'has_one :${1:category}'
@@ -23,3 +27,7 @@
   'belongs_to':
     'prefix': 'bt'
     'body': 'belongs_to :${1:category}'
+
+  'belongs_to_polymorphic':
+    'prefix': 'btp'
+    'body': 'belongs_to :${1:category}, polymorphic: true'

@@ -5,6 +5,11 @@
   "activationEvents": [
     "rails-snippets:toggleErb"
   ],
+  "snippets": [
+    "models/models",
+    "controller",
+    "forms"
+  ],
   "description": "Snippets for your ruby on rails projects.",
   "repository": "https://github.com/joseramonc/rails-snippets",
   "license": "MIT",

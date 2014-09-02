@@ -1,21 +1,5 @@
 '.source.ruby':
 
-  'generic validation':
-    'prefix': 'vd'
-    'body': 'validates :${1:field_1}, ${2:presence}: true'
-
-  'validates_presence_of':
-    'prefix': 'vpo'
-    'body': 'validates_presence_of :${1:field}'
-
-  'validtes_length_of':
-    'prefix': 'vlo'
-    'body': 'validates_length_of :$1, minimum: ${2:1}, maximum: ${3:10}$4'
-
-  'validates_format_of':
-    'prefix': 'vfo'
-    'body': 'validates_format_of :$1, with: ${2:REGEX}$3'
-
   'scope':
     'prefix': 'scope'
     'body': 'scope :${1:scope_name}, -> { ${2:where(${3:field}: ${4:true})} } $5'
@@ -31,43 +15,3 @@
   'where not':
     'prefix': 'where.not'
     'body': 'where.not(${1:field}: ${2:true})'
-
-  'after_create':
-    'prefix': 'ac'
-    'body': 'after_create :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'after_destroy':
-    'prefix': 'ac'
-    'body': 'after_destroy :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'after_save':
-    'prefix': 'as'
-    'body': 'after_save :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'after_update':
-    'prefix': 'au'
-    'body': 'after_update :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'after_validation':
-    'prefix': 'av'
-    'body': 'after_validation :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'before_create':
-    'prefix': 'bc'
-    'body': 'before_create :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'before_destroy':
-    'prefix': 'ac'
-    'body': 'before_destroy :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'before_save':
-    'prefix': 'bs'
-    'body': 'before_save :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'before_update':
-    'prefix': 'bu'
-    'body': 'before_update :${1:method_name}, $2{if: :${3:conditional_method}}'
-
-  'before_validation':
-    'prefix': 'bv'
-    'body': 'before_validation :${1:method_name}, $2{if: :${3:conditional_method}}'

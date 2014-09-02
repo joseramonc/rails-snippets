@@ -1,0 +1,41 @@
+'.source.ruby':
+
+  'after_create':
+    'prefix': 'ac'
+    'body': 'after_create :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'after_destroy':
+    'prefix': 'ac'
+    'body': 'after_destroy :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'after_save':
+    'prefix': 'as'
+    'body': 'after_save :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'after_update':
+    'prefix': 'au'
+    'body': 'after_update :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'after_validation':
+    'prefix': 'av'
+    'body': 'after_validation :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'before_create':
+    'prefix': 'bc'
+    'body': 'before_create :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'before_destroy':
+    'prefix': 'ac'
+    'body': 'before_destroy :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'before_save':
+    'prefix': 'bs'
+    'body': 'before_save :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'before_update':
+    'prefix': 'bu'
+    'body': 'before_update :${1:method_name}, $2{if: :${3:conditional_method}}'
+
+  'before_validation':
+    'prefix': 'bv'
+    'body': 'before_validation :${1:method_name}, $2{if: :${3:conditional_method}}'
