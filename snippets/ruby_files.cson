@@ -70,6 +70,14 @@
       else
     """
 
+  'array_iteration':
+    'prefix': '=loop'
+    'body': """
+      ${1:array}.each do |${2:member}|
+        $3
+      end
+    """
+
   #just if not using atom official ruby syntax::
   'def':
     'prefix': 'def'
