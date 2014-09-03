@@ -25,7 +25,7 @@
       end
     """
 
-  'each':
+  'each do':
     'prefix': '.e'
     'body': """
       .each do |${1:member}|
@@ -49,9 +49,26 @@
     'prefix': '.ua'
     'body': '.update_attribute :${1:attribute}, "${2:new value}"'
 
+  'update_attributes':
+    'prefix': '.uas'
+    'body': """
+      .update_attributes(
+        ${1:attribute}: "${2:value1}",
+        ${3:attribute_2}: "${4:value2}"
+      )
+    """
+
   'else statement':
     'prefix': 'else'
     'body': 'elsif ${1:true}'
+
+  'elsif else statement':
+    'prefix': 'elsee'
+    'body': """
+      elsif ${1:true}
+        ${2:\#code}
+      else
+    """
 
   #just if not using atom official ruby syntax::
   'def':
