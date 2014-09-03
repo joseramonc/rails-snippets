@@ -63,12 +63,14 @@ module.exports =
   insertErbBlock: (editor, currentCursor) ->
     # inserting the first block in the list
     defaultBlock = ERB_BLOCKS[0]
-    # inserting opening bracket
-    openingTag = editor.getBuffer().insert currentCursor.getBufferPosition(), defaultBlock[0] + ' '
-    # storing position between brackets
-    desiredPosition = currentCursor.getBufferPosition()
-    # inserting closing bracket
-    closingBlock = editor.getBuffer().insert currentCursor.getBufferPosition(), ' ' + defaultBlock[1]
+    desiredPosition = null
+    editor.transact ->
+      # inserting opening bracket
+      openingTag = editor.getBuffer().insert currentCursor.getBufferPosition(), defaultBlock[0] + ' '
+      # storing position between brackets
+      desiredPosition = currentCursor.getBufferPosition()
+      # inserting closing bracket
+      closingBlock = editor.getBuffer().insert currentCursor.getBufferPosition(), ' ' + defaultBlock[1]
     currentCursor.setBufferPosition( desiredPosition )
 
   replaceErbBlock: (editor, opener, closer, currentCursor) ->
@@ -76,10 +78,10 @@ module.exports =
     openingBracket = editor.getBuffer().getTextInRange(opener)
     closingBracket = editor.getBuffer().getTextInRange(closer)
     nextBlock = @getNextErbBlock editor, openingBracket, closingBracket
-
-    # replacing in reverse order because line length might change
-    editor.getBuffer().setTextInRange(closer, nextBlock[1])
-    editor.getBuffer().setTextInRange(opener, nextBlock[0])
+    editor.transact ->
+      # replacing in reverse order because line length might change
+      editor.getBuffer().setTextInRange(closer, nextBlock[1])
+      editor.getBuffer().setTextInRange(opener, nextBlock[0])
 
   getNextErbBlock: (editor, openingBracket, closingBracket) ->
     for block, i in ERB_BLOCKS
