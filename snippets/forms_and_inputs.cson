@@ -4,7 +4,9 @@
     'prefix': 'form_for'
     'body': """
       <%= form_for ${1} do |f| %>
-        ${2:<%= f.text_field :field_1 %>}
+        ${2:<%= render "shared/errors" %>}
+        ${3:<%= f.text_field :${4:field_1}, class: "${5:form-control}" %>}
+        ${6}
       <% end %>
     """
 
@@ -66,7 +68,7 @@
             :${3:id},
             :${4:name},
             {
-              include_blank: "${6:Please select one}"
+              include_blank: "${5:Please select one}"
             },
             { class: "${6:form-control}" }
       ) %>
@@ -81,12 +83,12 @@
             @${2:collection},
             "${3:id}",
             "${4:name}",
-            @${4:form_object.${1:resource_id}}
+            @${5:form_object}.${1:resource_id}
           ),
           {
-            include_blank: "${5:Please select one}"
+            include_blank: "${6:Please select one}"
           },
-          { class: "${6:form-control}" }
+          { class: "${7:form-control}" }
       ) %>
     """
 
