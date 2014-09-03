@@ -1,4 +1,4 @@
-'.text.html.ruby, .text.html.erb, .source.js.rails':
+'.text.html.ruby, .text.html.erb, .source.js.rails, .yaml':
   'erb_render_block':
     'prefix': '='
     'body': '<%= $1 %>'
