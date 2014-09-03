@@ -17,7 +17,7 @@
   'scope_params':
     'prefix': 'scopep'
     'body': """
-      scope :${1:colored}, -> (${2:param}) do
+      scope :${1:scope_name}, -> (${2:param}) do
         where(${3:attribute}: ${2:param})
       end
     """
@@ -30,12 +30,37 @@
       end$6
     """
 
+  'scope_between_dates':
+    'prefix': 'scopebd'
+    'body': """
+      scope :${1:scope_name}, -> do
+        where(
+          "${2:attribute} BETWEEN ? AND ?",
+          ${3:Time.now.at_beginning_of_day},
+          ${4:Time.now.at_end_of_day}
+        )
+      end$5
+    """
+
   'scope_joins':
     'prefix': 'scopej'
     'body': """
-      scope :${1:scope_name}, -> do |${2:attribute}|
-        joins(:${3:table_name}s).where(${3:field}: ${2:attribute})
-      end$5
+      scope :${1:scope_name},
+        joins(:${2:table_name}).where(
+          "${2:table_name}.${3:join_table_attribute} ${4:=} ?",
+          ${5:true}
+        )$6
+    """
+
+  'scope_joins_with_parameter':
+    'prefix': 'scopejp'
+    'body': """
+      scope :${1:scope_name}, -> (${2:attribute}) do
+        joins(:${3:table_name}).where(
+          "${3:table_name}.${4:join_table_attribute} ${5:=} ?",
+          ${2:attribute}
+        )
+      end$7
     """
 
   'default_scope':
