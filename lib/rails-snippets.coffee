@@ -15,26 +15,27 @@ module.exports =
 
   toggleErb: ->
     editor = atom.workspace.activePaneItem
-
-    # looping through each selection
     for selection in editor.getSelections() by 1
       hasTextSelected = !selection.isEmpty()
       selectedText = selection.getText()
-      selection.deleteSelectedText()
-      currentCursor = selection.cursor
+      delegate = @
 
-      # searching for opening and closing brackets
-      [opener, closer] = @findSorroundingBlocks editor, currentCursor
-      if opener? and closer?
-        # if brackets found - replacing them with the next ones.
-        @replaceErbBlock(editor, opener, closer, currentCursor)
-      else
-         # if the brackets were't found - inserting new ones.
-        @insertErbBlock(editor, currentCursor)
+      editor.transact ->
+        selection.deleteSelectedText()
+        currentCursor = selection.cursor
+        # searching for opening and closing brackets
+        [opener, closer] = delegate.findSorroundingBlocks editor, currentCursor
+        if opener? and closer?
+          # if brackets found - replacing them with the next ones.
+          delegate.replaceErbBlock editor, opener, closer, currentCursor
+        else
+          # if the brackets were't found - inserting new ones.
+          delegate.insertErbBlock editor, currentCursor
 
-      if hasTextSelected
-        textToRestoreRange = editor.getBuffer().insert currentCursor.getBufferPosition(), selectedText
-        selection.setBufferRange textToRestoreRange
+        if hasTextSelected
+          textToRestoreRange = editor.getBuffer().insert currentCursor.getBufferPosition(), selectedText
+          selection.setBufferRange textToRestoreRange
+
 
   findSorroundingBlocks: (editor, currentCursor) ->
     opener = closer = null
@@ -64,24 +65,22 @@ module.exports =
     # inserting the first block in the list
     defaultBlock = ERB_BLOCKS[0]
     desiredPosition = null
-    editor.transact ->
-      # inserting opening bracket
-      openingTag = editor.getBuffer().insert currentCursor.getBufferPosition(), defaultBlock[0] + ' '
-      # storing position between brackets
-      desiredPosition = currentCursor.getBufferPosition()
-      # inserting closing bracket
-      closingBlock = editor.getBuffer().insert currentCursor.getBufferPosition(), ' ' + defaultBlock[1]
+    # inserting opening bracket
+    openingTag = editor.getBuffer().insert currentCursor.getBufferPosition(), defaultBlock[0] + ' '
+    # storing position between brackets
+    desiredPosition = currentCursor.getBufferPosition()
+    # inserting closing bracket
+    closingBlock = editor.getBuffer().insert currentCursor.getBufferPosition(), ' ' + defaultBlock[1]
     currentCursor.setBufferPosition( desiredPosition )
 
   replaceErbBlock: (editor, opener, closer, currentCursor) ->
     # getting the next block in the list
-    openingBracket = editor.getBuffer().getTextInRange(opener)
-    closingBracket = editor.getBuffer().getTextInRange(closer)
+    openingBracket = editor.getBuffer().getTextInRange opener
+    closingBracket = editor.getBuffer().getTextInRange closer
     nextBlock = @getNextErbBlock editor, openingBracket, closingBracket
-    editor.transact ->
-      # replacing in reverse order because line length might change
-      editor.getBuffer().setTextInRange(closer, nextBlock[1])
-      editor.getBuffer().setTextInRange(opener, nextBlock[0])
+    # replacing in reverse order because line length might change
+    editor.getBuffer().setTextInRange closer, nextBlock[1]
+    editor.getBuffer().setTextInRange opener, nextBlock[0]
 
   getNextErbBlock: (editor, openingBracket, closingBracket) ->
     for block, i in ERB_BLOCKS
