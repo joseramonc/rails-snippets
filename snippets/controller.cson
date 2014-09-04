@@ -28,3 +28,7 @@
   'before_filter':
     'prefix': 'bf'
     'body': 'before_filter :${1:method_name}, only: [:${2:index}]'
+
+  'render_partial':
+    'prefix': 'rp'
+    'body': 'render "${1:action}"'
