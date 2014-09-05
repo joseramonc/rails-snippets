@@ -1,16 +1,18 @@
 # rails-snippets package
-An [atom](https://atom.io) package to add snippets for ruby on rails projects, it's developed with rails with ruby 1.9+ syntax (key: 'value') and rails 4 onwards in mind, but most shortcuts are going to work in 3.
+An [atom](https://atom.io) package to add snippets for Ruby on Rails projects.
+
+Developed with Ruby 1.9 syntax (`key: 'value'`) and rails 4 onwards in mind, but most code in the snippets is going to work on Rails 3 too.
 
 Contributions are greatly appreciated, if your favorite snippets are missing [open an issue](https://github.com/joseramonc/railsteroids/issues) or send a pull request, I would :heart: to merge your favorite snippets.
 
 Please fork this repository and open a pull request to add / improve snippets.
 
 ## Features
-snippets with nice defaults that are definitely going to save your a lot of time.
+* Snippets with nice defaults that are definitely going to save your a lot of time.
 
-Support for the great [package](https://github.com/eddorre/SublimeERB) by [@eddorre](https://github.com/eddorre/):
+* Support for the great [package](https://github.com/eddorre/SublimeERB) by [@eddorre](https://github.com/eddorre/):
 
-![demo](http://cl.ly/image/1P2E1x0h210l/toggle_erb.gif)
+  ![demo](http://cl.ly/image/1P2E1x0h210l/toggle_erb.gif)
 
 Toggle with:  <kbd>cmd</kbd> + <kbd>></kbd>
 
