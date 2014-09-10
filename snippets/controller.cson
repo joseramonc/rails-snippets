@@ -13,10 +13,6 @@
       end
     """
 
-  'respond_with':
-    'prefix': 'rew'
-    'body': 'respond_with ${1:Model}.${2:find(params[:id])}'
-
   'skip_before_action':
     'prefix': 'sba'
     'body': 'skip_before_action :${1:method_name}, only: [:${2:index}]'
