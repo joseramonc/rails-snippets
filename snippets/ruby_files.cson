@@ -78,6 +78,10 @@
       end
     """
 
+  'find_by_something':
+    'prefix': '.fb'
+    'body': '.find_by_${1:name}(${2:params[:${3:${1:name}}]})$4'
+
   #just if not using atom official ruby syntax::
   'def':
     'prefix': 'def'
