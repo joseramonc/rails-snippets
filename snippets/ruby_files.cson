@@ -90,7 +90,7 @@
   'do_block':
     'prefix': 'do'
     'body': """
-      do ${2:|${1:member}|}
+      do${1: |${2:member}|}
         $3
       end
     """
