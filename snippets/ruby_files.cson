@@ -78,6 +78,10 @@
       end
     """
 
+  'find':
+    'prefix': '.f'
+    'body': '.find(${1:params[:id]})'
+
   'find_by_something':
     'prefix': '.fb'
     'body': '.find_by_${1:name}(${2:params[:${3:${1:name}}]})$4'
