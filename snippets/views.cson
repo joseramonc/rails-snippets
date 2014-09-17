@@ -142,6 +142,14 @@
       <% end %>
     """
 
+  'russian doll caching':
+    'prefix': 'cache'
+    'body': """
+      <% cache ["${1:key}", ${2:object}] do %>
+        $3
+      <% end %>
+    """
+
   'end':
     'prefix': 'end'
     'body': '<% end %>'

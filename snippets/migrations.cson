@@ -18,7 +18,7 @@
 
   'rename_column':
     'prefix': 'rnc'
-    'body': 'rename_column :${1:table_name}, :${2:column_name}, :${3:new_column_name})'
+    'body': 'rename_column :${1:table_name}, :${2:column_name}, :${3:new_column_name}'
 
   'remove_column':
     'prefix': 'rmc'
@@ -26,4 +26,4 @@
 
   'change_column':
     'prefix': 'cc'
-    'body': 'change_column :${1:table_name}, :${2:column_name}, ${3:type}'
+    'body': 'change_column :${1:table_name}, :${2:column_name}, :${3:type}'
