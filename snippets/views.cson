@@ -18,17 +18,41 @@
 
   'link_to':
     'prefix': 'lt'
-    'body': '<%= link_to "${1:name}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>'
+    'body': '<%= link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>'
 
   'link_to_method':
     'prefix': 'ltm'
-    'body': '<%= link_to "${1:name}", ${2:path}, method: :${3:post} %>'
+    'body': '<%= link_to "${1:text}", ${2:path}, method: :${3:post} %>'
 
   'link_to_block':
     'prefix': 'ltblock'
     'body': """
-      <%= link_to ${1:path} do %>
-        ${2:<!-- content -->}
+      <%= link_to ${1:path}, class: "${2:btn btn-primary}" do %>
+        ${3:<%= ${4:fa_icon('${5:search}')} %>}$6
+      <% end %>
+    """
+
+  'button_to':
+    'prefix': 'bt'
+    'body': '<%= button_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>'
+
+  'button_to_method':
+    'prefix': 'btm'
+    'body': '<%= button_to "${1:text}", ${2:path}, method: :${3:post} %>'
+
+  'button_to_block':
+    'prefix': 'btblock'
+    'body': """
+      <%= link_to ${1:path}, class: "${2:btn btn-primary}" do %>
+        ${3:<%= ${4:fa_icon('${5:search}')} %>}$6
+      <% end %>
+    """
+
+  'button_tag':
+    'prefix': 'btag'
+    'body': """
+      <%= button_tag class: '${2:btn btn-${3:primary}}' do %>
+        <%= ${4:fa_icon('${5:search}'${6:, text: '${7:Buscar}'})} %>
       <% end %>
     """
 
@@ -84,14 +108,6 @@
     'prefix': 'flt'
     'body': '<%= favicon_link_tag "favicon.ico" %>'
 
-  'embeded loop':
-    'prefix': ' do' #prefix (space)do is just to beat this snippet https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
-    'body': """
-      do |$1| %>
-        <%= $2 %>
-      <% end
-    """
-
   '.each loop':
     'prefix': '.each'
     'body': """
@@ -126,10 +142,35 @@
       <% end %>
     """
 
+  'else statement':
+    'prefix': 'else'
+    'body': '<% else %>'
+
+  'russian doll caching':
+    'prefix': 'cache'
+    'body': """
+      <% cache ["${1:key}", ${2:object}] do %>
+        $3
+      <% end %>
+    """
+
   'end':
     'prefix': 'end'
     'body': '<% end %>'
 
   'font_awesome_icon':
-    'prefix': 'icon'
-    'body': '<i class="${2:fa fa-${1:truck}}"></i>$3'
+    'prefix': 'fa'
+    'body': '<%= fa_icon("${1:search}"${2:, text: "${3:Buscar}"}) %>'
+
+'.embedded.erb, .embedded.ruby, .embedded.rails':
+  'embedded_font_awesome_icon':
+    'prefix': 'fa'
+    'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
+
+  'embeded loop':
+    'prefix': ' do' #prefix (space)do is just to beat this snippet https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
+    'body': """
+       do |$1| %>
+        <%= $2 %>
+      <% end
+    """
