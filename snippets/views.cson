@@ -142,6 +142,10 @@
       <% end %>
     """
 
+  'else statement':
+    'prefix': 'else'
+    'body': '<% else %>'
+
   'russian doll caching':
     'prefix': 'cache'
     'body': """
