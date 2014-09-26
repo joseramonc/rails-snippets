@@ -98,7 +98,7 @@
   'do_block':
     'prefix': 'do'
     'body': """
-      do${1: |${2:member}|}
+      do ${1:|${2:member}|}
         $3
       end
     """
