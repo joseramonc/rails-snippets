@@ -111,8 +111,8 @@
   '.each loop':
     'prefix': '.each'
     'body': """
-      .each do |$1| %>
-        <%= $2 %>
+      .each do ${1:|${2:member}|} %>
+        <%= $3 %>
       <% end
     """
 
@@ -168,9 +168,9 @@
     'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
 
   'embeded loop':
-    'prefix': ' do' #prefix (space)do is just to beat this snippet https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
+    'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
     'body': """
-       do |$1| %>
-        <%= $2 %>
+       do ${1:|${2:member}|} %>
+        <%= $3 %>
       <% end
     """

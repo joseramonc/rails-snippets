@@ -25,6 +25,14 @@
       end
     """
 
+  'do_block':
+    'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
+    'body': """
+      do ${1:|${2:member}|}
+        $3
+      end
+    """
+
   'each do':
     'prefix': '.e'
     'body': """
@@ -92,13 +100,5 @@
     'body': """
       def ${1:method}
         ${2:\#code}
-      end
-    """
-
-  'do_block':
-    'prefix': 'do'
-    'body': """
-      do ${1:|${2:member}|}
-        $3
       end
     """
