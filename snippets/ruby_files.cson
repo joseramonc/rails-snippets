@@ -25,6 +25,21 @@
       end
     """
 
+  'concern':
+    'prefix': 'concern'
+    'body': """
+      module ${1:ConcernName}
+        extend ActiveSupport::Concern
+        ${2:included do
+          # code ...
+        end}
+        # instance methods go here
+        module ClassMethods
+          # static methods go here
+        end
+      end
+    """
+
   'do_block':
     'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
     'body': """
