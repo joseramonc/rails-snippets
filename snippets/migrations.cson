@@ -4,7 +4,7 @@
     'prefix': 'ct'
     'body': """
       create_table :${1:table_name} do |t|
-        t.${2.string} :${3:name}
+        t.${2:string} :${3:name}
       end
     """
 
@@ -16,6 +16,10 @@
     'prefix': 'dt'
     'body': 'drop_table :${1:table_name}'
 
+  'rename_table':
+    'prefix': 'ret'
+    'body': 'rename_table :${1:old_table_name}, :${2:new_table_name}'
+
   'rename_column':
     'prefix': 'rnc'
     'body': 'rename_column :${1:table_name}, :${2:column_name}, :${3:new_column_name}'
@@ -26,4 +30,4 @@
 
   'change_column':
     'prefix': 'cc'
-    'body': 'change_column :${1:table_name}, :${2:column_name}, :${3:type}'
+    'body': 'change_column :${1:table_name}, :${2:column_name}, :${3:type}${4:, :${5:optional_old_type}}'
