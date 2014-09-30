@@ -80,7 +80,7 @@
     'prefix': 'ctblock'
     'body': """
       <%= content_tag :${1:div}, ${2:key}: "${3:value}" do %>
-        ${4:<!-- content -->
+        ${4:<!-- content -->}
       <% end %>
     """
 
