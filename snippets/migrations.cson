@@ -4,7 +4,7 @@
     'prefix': 'ct'
     'body': """
       create_table :${1:table_name} do |t|
-        t.${2.string} :${3:name}
+        t.${2:string} :${3:name}
       end
     """
 
