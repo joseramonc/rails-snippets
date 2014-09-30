@@ -43,7 +43,7 @@
   'do_block':
     'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
     'body': """
-      do ${1:|${2:member}|}
+       do ${1:|${2:member}|}
         $3
       end
     """
