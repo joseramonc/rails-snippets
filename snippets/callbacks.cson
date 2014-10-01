@@ -5,7 +5,7 @@
     'body': 'after_create :${1:method_name}, ${2:if: :${3:conditional_method}}'
 
   'after_destroy':
-    'prefix': 'ac'
+    'prefix': 'ad'
     'body': 'after_destroy :${1:method_name}, ${2:if: :${3:conditional_method}}'
 
   'after_save':
@@ -25,7 +25,7 @@
     'body': 'before_create :${1:method_name}, ${2:if: :${3:conditional_method}}'
 
   'before_destroy':
-    'prefix': 'ac'
+    'prefix': 'bd'
     'body': 'before_destroy :${1:method_name}, ${2:if: :${3:conditional_method}}'
 
   'before_save':
