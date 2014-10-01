@@ -15,8 +15,8 @@
     'body': """
       <%= form_tag ${1:submission_path}, :method => :${2:get}, class: "navbar-form navbar-left search-form" do %>
         <%= text_field_tag(
-            :search,
-            params[:search],
+            :${3:search},
+            params[:${3:search}],
             placeholder: "Search",
             class: "form-control"
         ) %>
@@ -81,15 +81,33 @@
           :${1:resource_id},
           options_from_collection_for_select(
             @${2:collection},
-            "${3:id}",
-            "${4:name}",
+            :${3:id},
+            :${4:name},
             @${5:form_object}.${1:resource_id}
           ),
           {
             include_blank: "${6:Please select one}"
           },
           { class: "${7:form-control}" }
-      ) %>
+      ) %>$8
+    """
+
+  'select_tag':
+    'prefix': 'st'
+    'body': """
+      <%= select_tag(
+        :${1:color_id},
+        options_from_collection_for_select(
+          @${2:colors},
+          :${3:id},
+          :${4:name},
+          params[:${1:color_id}]
+        ),
+        {
+          include_blank: "Please select one"
+        },
+        { class: "${5:form-control}" }
+      ) %> $6
     """
 
   'file_field':
@@ -99,6 +117,11 @@
   'submit_field':
     'prefix': 'fs'
     'body': '<%= f.submit "${1:Save / Update}", class: "${2: btn btn-success"} %>'
+
+  'submit_tag':
+    'prefix': 'sut'
+    'body': '<%= submit_tag "${1:Search!}", class: "${3:btn btn-${2:primary}}" %>'
+
 
   'input':
     'prefix': 'f.'
