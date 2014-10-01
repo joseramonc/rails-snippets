@@ -103,9 +103,9 @@
 
   'find':
     'prefix': '.f'
-    'body': '.find(${1:params[:id]})'
+    'body': '.find(${1:params[:id]})$2'
 
-  'find_by_something':
+  'find_by_attribute':
     'prefix': '.fb'
     'body': '.find_by_${1:name}(${2:params[:${3:${1:name}}]})$4'
 
