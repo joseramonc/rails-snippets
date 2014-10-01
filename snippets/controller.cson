@@ -25,6 +25,14 @@
     'prefix': 'sbf'
     'body': 'skip_before_filter :${1:method_name}, only: [:${2:index}]'
 
+  'skip_after_action':
+    'prefix': 'saa'
+    'body': 'skip_after_action :${1:method_name}, only: [:${2:index}]'
+
+  'skip_after_filter':
+    'prefix': 'saf'
+    'body': 'skip_after_filter :${1:method_name}, only: [:${2:index}]'
+
   'before_action':
     'prefix': 'ba'
     'body': 'before_action :${1:method_name}, only: [:${2:index}]'
@@ -32,6 +40,14 @@
   'before_filter':
     'prefix': 'bf'
     'body': 'before_filter :${1:method_name}, only: [:${2:index}]'
+
+  'after_filter':
+    'prefix': 'af'
+    'body': 'after_filter :${1:method_name}, only:[:${2:index}]'
+
+  'after_action':
+    'prefix': 'aa'
+    'body': 'after_action :${1:method_name}, only:[:${2:index}]'
 
   'render_partial':
     'prefix': 'rp'
