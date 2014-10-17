@@ -16,6 +16,10 @@
       <% end %>
     """
 
+  'options_from_collection_for_select':
+    'prefix': 'ofcfs'
+    'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name})'
+
   'link_to':
     'prefix': 'lt'
     'body': '<%= link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>'
