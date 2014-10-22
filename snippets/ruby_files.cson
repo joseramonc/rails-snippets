@@ -3,17 +3,25 @@
 '.source.ruby, .source.ruby.rails':
   'it':
     'prefix': 'it'
-    'body': 'it "should $1" do\n\t$2\nend'
+    'body': """
+      it "should $1" do
+        $2
+      end
+    """
 
   'describe':
     'prefix': 'describe'
-    'body': 'describe \'when $1\' do\n\t$2\nend'
+    'body': """
+      describe "when $1" do
+        $2
+      end
+    """
 
   'class':
     'prefix': 'class'
     'body': """
-      class ${1:ClassName} ${2:< ActiveRecord::Base}
-        ${3:\#code}
+      class ${1:ClassName} ${3:< ${2:ActiveRecord::Base}}
+        ${4:\#code}
       end
     """
 
