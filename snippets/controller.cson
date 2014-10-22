@@ -9,7 +9,7 @@
     'body': """
       respond_to do |format|
         format.html
-        format.json { render :json => @${1:resource} }
+        format.json { render json: @${1:resource} }
       end
     """
 

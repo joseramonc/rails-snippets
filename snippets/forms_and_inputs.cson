@@ -13,7 +13,7 @@
   'form_tag':
     'prefix': 'form_tag'
     'body': """
-      <%= form_tag ${1:submission_path}, :method => :${2:get}, class: "navbar-form navbar-left search-form" do %>
+      <%= form_tag ${1:submission_path}, method: :${2:get}, class: "navbar-form navbar-left search-form" do %>
         <%= text_field_tag(
             :${3:search},
             params[:${3:search}],
