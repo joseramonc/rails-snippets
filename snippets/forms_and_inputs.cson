@@ -107,7 +107,7 @@
           include_blank: "Please select one"
         },
         { class: "${5:form-control}" }
-      ) %> $6
+      ) %> $0
     """
 
   'file_field':
@@ -116,13 +116,13 @@
 
   'submit_field':
     'prefix': 'fs'
-    'body': '<%= f.submit "${1:Save / Update}", class: "${2: btn btn-success"} %>'
+    'body': '<%= f.submit "${1:Save / Update}", class: "${2:btn btn-primary"} %>$0'
 
   'submit_tag':
     'prefix': 'sut'
-    'body': '<%= submit_tag "${1:Search!}", class: "${3:btn btn-${2:primary}}" %>'
+    'body': '<%= submit_tag "${1:Search!}", class: "${3:btn btn-${2:primary}}" %>$0'
 
 
   'input':
     'prefix': 'f.'
-    'body': '<%= f.${1:type}_field :${2:field_1} %>'
+    'body': '<%= f.${1:type}_field :${2:field_1}, class: "${3:form-control}" %>$0'

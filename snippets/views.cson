@@ -18,11 +18,11 @@
 
   'options_from_collection_for_select':
     'prefix': 'ofcfs'
-    'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name})'
+    'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name}, 4:f.object.${product_id})$0'
 
   'link_to':
     'prefix': 'lt'
-    'body': '<%= link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>'
+    'body': '<%= link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>$0'
 
   'link_to_method':
     'prefix': 'ltm'
@@ -38,11 +38,11 @@
 
   'button_to':
     'prefix': 'bt'
-    'body': '<%= button_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>'
+    'body': '<%= button_to "${1:text}", ${2:path}, class: "${3:btn btn-primary}" %>$0'
 
   'button_to_method':
     'prefix': 'btm'
-    'body': '<%= button_to "${1:text}", ${2:path}, method: :${3:post} %>'
+    'body': '<%= button_to "${1:text}", ${2:path}, class: "${3:btn btn-primary}", method: :${4:post} %>$0'
 
   'button_to_block':
     'prefix': 'btblock'
@@ -72,9 +72,13 @@
     'prefix': 'rp'
     'body': '<%= render "${1:partial}" %>'
 
+  'render (partial, object)':
+    'prefix': 'rp'
+    'body': '<%= render "${1:shared/errors}", object: @${2:object} %>'
+
   'render (partial, locals)':
     'prefix': 'rpl'
-    'body': '<%= render "${1:item}", ${2:variable}: ${3:object}$4 %>'
+    'body': '<%= render "${1:d}", ${2:variable}: ${3:object}$4 %>'
 
   'content_tag':
     'prefix': 'ct'

@@ -30,4 +30,4 @@
 
   'change_column':
     'prefix': 'cc'
-    'body': 'change_column :${1:table_name}, :${2:column_name}, :${3:type}${4:, :${5:optional_old_type}}'
+    'body': 'change_column :${1:table_name}, :${2:column_name}, :${3:type}, :${4:optional_old_type}'

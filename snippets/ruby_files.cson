@@ -56,6 +56,14 @@
       end
     """
 
+  'each block':
+    'prefix': '.each'
+    'body': """
+      .each do |${1:member}|
+        ${2:\#code...}
+      end $3
+    """
+
   'each do':
     'prefix': '.e'
     'body': """
