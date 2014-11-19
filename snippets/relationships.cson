@@ -14,7 +14,7 @@
 
   'has_many_through':
     'prefix': 'hmt'
-    'body': 'has_many :${1:categories}, through: ${2:categorizations}$3'
+    'body': 'has_many :${1:categories}, through: :${2:categorizations}$3'
 
   'has_and_belongs_to_many':
     'prefix': 'habtm'
