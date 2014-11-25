@@ -18,7 +18,7 @@
 
   'options_from_collection_for_select':
     'prefix': 'ofcfs'
-    'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name}, 4:f.object.${product_id})$0'
+    'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name}, ${4:f.object.${5:product_id}})$0'
 
   'link_to':
     'prefix': 'lt'
