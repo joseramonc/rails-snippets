@@ -25,6 +25,21 @@
       end
     """
 
+  'model':
+    'prefix': 'model'
+    'body': """
+      class ${1:User} ${2:< ${3:ActiveRecord::Base}}
+        ${4:# lot of code :D}
+      end
+    """
+  'controller':
+    'prefix': 'controller'
+    'body': """
+      class ${1:Users}Controller < ApplicationController
+        ${2:# lot of controller code :D}
+      end
+    """
+
   'module':
     'prefix': 'module'
     'body': """
@@ -38,12 +53,20 @@
     'body': """
       module ${1:ConcernName}
         extend ActiveSupport::Concern
-        ${2:included do
-          # code ...
+        ${3:included do
+          ${2:# code ...}
         end}
+
         # instance methods go here
+        ${4:# def instance_method
+        #
+        # end}
+
         module ClassMethods
           # static methods go here
+          $5{# def static_method
+          #
+          # end}
         end
       end
     """
@@ -51,7 +74,7 @@
   'do_block':
     'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
     'body': """
-       do ${1:|${2:member}|}
+       do ${2:|${1:member}|}
         $3
       end
     """
