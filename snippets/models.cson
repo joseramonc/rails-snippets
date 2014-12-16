@@ -12,7 +12,7 @@
 
   'scope':
     'prefix': 'scope'
-    'body': 'scope :${1:scope_name}, ${2:where(${3:field}: ${4:true})} $5'
+    'body': 'scope :${1:scope_name}, -> { ${2:where(${3:field}: ${4:true})} $5 }'
 
   'scope_params':
     'prefix': 'scopep'
