@@ -64,7 +64,7 @@
 
         module ClassMethods
           # static methods go here
-          $5{# def static_method
+          ${5:# def static_method
           #
           # end}
         end
