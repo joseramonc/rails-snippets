@@ -1,2 +1,2 @@
-'.atom-text-editor:not(.mini)':
+'atom-text-editor:not(.mini)':
   'cmd->': 'rails-snippets:toggleErb'
