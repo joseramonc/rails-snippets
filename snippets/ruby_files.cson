@@ -21,7 +21,7 @@
     'prefix': 'class'
     'body': """
       class ${1:ClassName} ${3:< ${2:ActiveRecord::Base}}
-        ${4:\#code}
+        ${4:#code}
       end
     """
 
@@ -44,7 +44,7 @@
     'prefix': 'module'
     'body': """
       module ${1:ModuleName}
-        ${2:\#code}
+        ${2:#code}
       end
     """
 
@@ -83,7 +83,7 @@
     'prefix': '.each'
     'body': """
       .each do |${1:member}|
-        ${2:\#code...}
+        ${2:#code...}
       end $3
     """
 
@@ -91,7 +91,7 @@
     'prefix': '.e'
     'body': """
       .each do |${1:member}|
-        ${2:\#code...}
+        ${2:#code...}
       end $3
     """
 
@@ -99,7 +99,7 @@
     'prefix': '.ewi'
     'body': """
       .each_with_index do |${1:member}, ${2:index}|
-        ${3:\#code...}
+        ${3:#code...}
       end $4
     """
 
@@ -128,7 +128,7 @@
     'prefix': 'elsee'
     'body': """
       elsif ${1:true}
-        ${2:\#code}
+        ${2:#code}
       else
     """
 
@@ -153,6 +153,6 @@
     'prefix': 'def'
     'body': """
       def ${1:method}
-        ${2:\#code}
+        ${2:#code}
       end
     """
