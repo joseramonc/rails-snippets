@@ -116,14 +116,6 @@
     'prefix': 'flt'
     'body': '<%= favicon_link_tag "favicon.ico" %>'
 
-  '.each loop':
-    'prefix': '.each'
-    'body': """
-      .each do ${1:|${2:member}|} %>
-        <%= $3 %>
-      <% end
-    """
-
   '.each with index':
     'prefix': '.ewi'
     'body': """
@@ -170,10 +162,20 @@
     'prefix': 'fa'
     'body': '<%= fa_icon("${1:search}"${2:, text: "${3:Buscar}"}) %>'
 
-'.embedded.erb, .embedded.ruby, .embedded.rails':
+'.embedded.line.erb, .embedded.line.ruby, .embedded.line.rails':
   'embedded_font_awesome_icon':
     'prefix': 'fa'
     'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
+
+
+'.text.html.erb > .embedded.line.erb > .source.ruby':
+  'embedded each':
+    'prefix': '.each'
+    'body': """
+      .each do |${1:member}| %>
+        <%= ${2:\# c...} %>
+      <% end %>
+    """
 
   'embeded loop':
     'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
