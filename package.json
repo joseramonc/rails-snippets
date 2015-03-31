@@ -15,7 +15,7 @@
     "snippets",
     "erb",
     "ruby on rails"
-  ]
+  ],
   "description": "Snippets for your ruby on rails projects.",
   "repository": "https://github.com/joseramonc/rails-snippets",
   "license": "MIT",
