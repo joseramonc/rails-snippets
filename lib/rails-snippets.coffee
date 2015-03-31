@@ -1,5 +1,6 @@
 # much love to @eddorre <3 <3
 {Range} = require 'atom'
+{CompositeDisposable} = require 'atom'
 
 # erb supported blocks
 ERB_BLOCKS = [['<%=', '%>'], ['<%', '%>'], ['<%#', '%>']]
@@ -11,10 +12,11 @@ ERB_CLOSER_REGEX = "%>"
 
 module.exports =
   activate: ->
-    atom.workspaceView.command "rails-snippets:toggleErb", => @toggleErb()
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.commands.add 'atom-workspace', 'rails-snippets:toggleErb', => @toggleErb()
 
   toggleErb: ->
-    editor = atom.workspace.activePaneItem
+    editor = atom.workspace.getActiveEditor()
     for selection in editor.getSelections() by 1
       hasTextSelected = !selection.isEmpty()
       selectedText = selection.getText()
@@ -26,10 +28,10 @@ module.exports =
         # searching for opening and closing brackets
         [opener, closer] = delegate.findSorroundingBlocks editor, currentCursor
         if opener? and closer?
-          # if brackets found - replacing them with the next ones.
+          # if both brackets found - replacing them with the next ones.
           delegate.replaceErbBlock editor, opener, closer, currentCursor
         else
-          # if the brackets were't found - inserting new ones.
+          # if any of the brackets were't found - inserting new ones.
           delegate.insertErbBlock editor, currentCursor
 
         if hasTextSelected
