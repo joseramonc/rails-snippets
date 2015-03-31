@@ -10,11 +10,17 @@
     "controller",
     "forms"
   ],
+  "keywords": [
+    "rails",
+    "snippets",
+    "erb",
+    "ruby on rails"
+  ]
   "description": "Snippets for your ruby on rails projects.",
   "repository": "https://github.com/joseramonc/rails-snippets",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": "*"
   },
   "dependencies": {
     "underscore-plus": "1.x"
