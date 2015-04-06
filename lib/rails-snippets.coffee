@@ -16,7 +16,7 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-workspace', 'rails-snippets:toggleErb', => @toggleErb()
 
   toggleErb: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
     for selection in editor.getSelections() by 1
       hasTextSelected = !selection.isEmpty()
       selectedText = selection.getText()
