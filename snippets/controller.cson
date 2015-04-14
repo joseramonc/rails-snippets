@@ -48,3 +48,7 @@
   'render_partial':
     'prefix': 'rp'
     'body': 'render "${1:action}"'
+
+  'current_user':
+    'prefix': 'cur'
+    'body': 'current_user'
