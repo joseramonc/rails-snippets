@@ -20,8 +20,8 @@
   'class':
     'prefix': 'class'
     'body': """
-      class ${1:ClassName} ${3:< ${2:ActiveRecord::Base}}
-        ${4:#code}
+      class ${1:ClassName}
+        ${2:#code}
       end
     """
 
