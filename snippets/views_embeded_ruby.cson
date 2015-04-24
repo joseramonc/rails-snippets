@@ -1,4 +1,4 @@
-'.text.html.erb > .embedded.line.erb > .source.ruby':
+'.text.html.erb > .embedded.line.erb, > .source.ruby, .text.html.ruby > .embedded':
   'embedded_font_awesome_icon':
     'prefix': 'fa'
     'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
