@@ -1,6 +1,6 @@
 {
   "name": "rails-snippets",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "main": "./lib/rails-snippets",
   "activationEvents": [
     "rails-snippets:toggleErb"
