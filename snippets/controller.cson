@@ -2,7 +2,7 @@
 
   'redirect_to':
     'prefix': 'rt'
-    'body': 'redirect_to ${1:resource}_path'
+    'body': 'redirect_to ${1:resource}_url'
 
   'respond_to':
     'prefix': 'respond_to'
