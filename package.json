@@ -1,9 +1,11 @@
 {
   "name": "rails-snippets",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "main": "./lib/rails-snippets",
   "activationCommands": {
-    "atom-text-editor": ["rails-snippets:toggleErb"]
+    "atom-text-editor": [
+      "rails-snippets:toggleErb"
+    ]
   },
   "snippets": [
     "models/models",
