@@ -1,4 +1,4 @@
-'.source.ruby, .source.ruby.rails, .meta.rails.model':
+'.source.ruby, .source.ruby.rails .meta.rails.model':
 
   'enum':
     'prefix': 'enum'
@@ -8,7 +8,7 @@
         :${3:unactive},
         :${4:archieved}
       ]$5
-      """
+    """
 
   'scope':
     'prefix': 'scope'

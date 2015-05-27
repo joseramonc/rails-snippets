@@ -1,5 +1,5 @@
 # this snippets are sensitive defaults when working with rails, are intended to
-# be used when the selected syntax is different thatn Ruby.
+# be used when the selected syntax is different than Ruby (Ruby on Rails).
 '.source.ruby, .source.ruby.rails':
   'it':
     'prefix': 'it'

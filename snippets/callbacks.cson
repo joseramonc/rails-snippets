@@ -1,4 +1,4 @@
-'.source.ruby, .source.ruby.rails':
+'.source.ruby, .source.ruby.rails .meta.rails.model':
 
   'after_create':
     'prefix': 'ac'
