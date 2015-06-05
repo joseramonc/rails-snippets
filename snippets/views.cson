@@ -165,3 +165,7 @@
   'current_user':
     'prefix': 'cur'
     'body': '<%= current_user %>'
+
+  'fa_link':
+    'prefix': 'ltf'
+    'body': '<%= link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:path} %>'

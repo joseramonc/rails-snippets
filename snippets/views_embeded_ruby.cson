@@ -12,7 +12,7 @@
       <% end
     """
 
-  'embeded loop':
+  'embedded loop':
     'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
     'body': """
        do ${1:|${2:member}|} %>
@@ -20,6 +20,10 @@
       <% end
     """
 
-  'embeded link_to':
+  'embedded link_to':
     'prefix': 'lt'
     'body': 'link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"}$0'
+
+  'embedded_fa_link':
+    'prefix': 'ltf'
+    'body': 'link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:path}'
