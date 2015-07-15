@@ -52,3 +52,12 @@
   'current_user':
     'prefix': 'cur'
     'body': 'current_user'
+
+  'params_whitelist':
+    'prefix': 'wparams'
+    'body': """
+      def ${1:model}_params
+        params.require(:${1:model}).permit(
+          :${2:attr_1}
+        )
+    """
