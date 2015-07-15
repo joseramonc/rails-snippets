@@ -4,7 +4,7 @@
     'prefix': 'form_for'
     'body': """
       <%= form_for ${1} do |f| %>
-        ${2:<%= render "shared/errors" %>}
+        ${2:<%= render "shared/errors", object: ${1} %>}
         ${3:<%= f.text_field :${4:field_1}, class: "${5:form-control}" %>}
         ${6}
       <% end %>
@@ -29,27 +29,27 @@
 
   'text_field':
     'prefix': 'ftf'
-    'body': '<%= f.text_field :${1:field_1}, class: "${2:form-control}" %>'
+    'body': '<%= f.text_field :${1:field_1}${2:, class: "${3:form-control}"} %>'
 
   'password_field':
     'prefix': 'fpf'
-    'body': '<%= f.password_field :${1:field_1}, class: "${2:form-control}" %>'
+    'body': '<%= f.password_field :${1:field_1}${2:, class: "${3:form-control}"} %>'
 
-  'email_select':
+  'email_field':
     'prefix': 'fes'
-    'body': '<%= f.email_select :${1:field_1}, class: "${2:form-control}" %>'
+    'body': '<%= f.email_field :${1:field_1}{2:, class: "${3:form-control}"} %>'
 
   'hidden_field':
     'prefix': 'fhf'
-    'body': '<%= f.hidden_field :${1:field_1}, class: "${2:form-control}" %>'
+    'body': '<%= f.hidden_field :${1:field_1}, value: "${2:true}" %>'
 
   'number_field':
     'prefix': 'fnf'
-    'body': '<%= f.number_field :${1:field_1}, class: "${2:form-control}" %>'
+    'body': '<%= f.number_field :${1:field_1}{2:, class: "${3:form-control}"} %>'
 
   'text_area':
     'prefix': 'fta'
-    'body': '<%= f.text_area :${1:field_1}, class: "${2:form-control}" %>'
+    'body': '<%= f.text_area :${1:field_1}${2:, class: "${3:form-control}"} %>'
 
   'date_select':
     'prefix': 'fds'
@@ -116,13 +116,12 @@
 
   'submit_field':
     'prefix': 'fs'
-    'body': '<%= f.submit "${1:Save / Update}", class: "${2:btn btn-primary"} %>$0'
+    'body': '<%= f.submit "${1:Save / Update}"${2:, class: "${3:btn btn-primary"}} %>$0'
 
   'submit_tag':
     'prefix': 'sut'
-    'body': '<%= submit_tag "${1:Search!}", class: "${3:btn btn-${2:primary}}" %>$0'
-
+    'body': '<%= submit_tag "${1:Search!}"${2:, class: "${4:btn btn-${3:primary}}"} %>$0'
 
   'input':
     'prefix': 'f.'
-    'body': '<%= f.${1:type}_field :${2:field_1}, class: "${3:form-control}" %>$0'
+    'body': '<%= f.${1:text}_field :${2:field_1}${3:, class: "${4:form-control}"} %>$0'
