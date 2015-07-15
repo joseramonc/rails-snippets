@@ -35,3 +35,11 @@
   'add_index':
     'prefix': 'ai'
     'body': 'add_index :${1:table_name}, :${2:column_name}${3:, {$4}}'
+
+  'add_foreign_key':
+    'prefix': 'afk'
+    'body': 'add_foreign_key :${1:from_table}, :${2:to_table}3:{, options = {}}'
+
+  'remove_foreign_key':
+    'prefix': 'rfk'
+    'body': 'remove_foreign_key :${1:from_table}, column: :${2:model_id}'
