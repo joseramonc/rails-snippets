@@ -27,3 +27,11 @@
   'embedded_fa_link':
     'prefix': 'ltf'
     'body': 'link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:path}'
+
+  'embedded_number_to_currency':
+    'prefix': 'ntc'
+    'body': 'number_to_currency ${1:number}'
+
+  'embedded_number_to_human':
+    'prefix': 'nth'
+    'body': 'number_to_human ${1:number}'
