@@ -70,3 +70,7 @@
         ${2:where(${3:field}: ${4:true})}
       end $5
     """
+
+  'alias_attribute':
+    'prefix': 'ala'
+    'body': "alias_attribute :${1:new_name}, :${2:old_name}$0"
