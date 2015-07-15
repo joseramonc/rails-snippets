@@ -1,4 +1,8 @@
 '.source.ruby, .source.ruby.rails':
   'assert_equal':
     'prefix': 'ae'
-    'body': 'assert_equal ${1:expected}, ${2:actual}, "${3:didn\'t matched :(}"'
+    'body': 'assert_equal ${1:expected}, ${2:actual}${3:, "${4:failure message}"}'
+
+  'assert':
+    'prefix': 'at'
+    'body': 'assert ${1:test}${2:, "${3:failure message}"}'
