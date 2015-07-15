@@ -26,7 +26,7 @@
 
   'belongs_to':
     'prefix': 'bt'
-    'body': 'belongs_to :${1:category}'
+    'body': 'belongs_to :${1:category}${2:, dependent: ${3::destroy}}'
 
   'belongs_to_polymorphic':
     'prefix': 'btp'
