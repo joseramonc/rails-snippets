@@ -38,6 +38,6 @@
     'prefix': 'vuos'
     'body': 'validates_uniqueness_of :${1:field}, scope: :${2:other_field}'
 
-  'validates_presence_of':
+  'validates_confirmation_of':
     'prefix': 'vco'
     'body': 'validates_confirmation_of :${1:field}'
