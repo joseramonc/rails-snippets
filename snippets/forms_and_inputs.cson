@@ -110,6 +110,10 @@
       ) %> $0
     """
 
+  'checkbox':
+    'prefix': 'fcb'
+    'body': '<%= f.check_box :${1:method}, ${2:options}, ${3:true}, ${4:false} %>'
+
   'file_field':
     'prefix': 'fff'
     'body': '<%= f.file_field :${1:file}, accept: "${2:video/mp4}", class: "form-control" %>'
