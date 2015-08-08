@@ -37,7 +37,7 @@
 
   'email_field':
     'prefix': 'fes'
-    'body': '<%= f.email_field :${1:field_1}{2:, class: "${3:form-control}"} %>'
+    'body': '<%= f.email_field :${1:field_1}${2:, class: "${3:form-control}"} %>'
 
   'hidden_field':
     'prefix': 'fhf'
@@ -45,7 +45,7 @@
 
   'number_field':
     'prefix': 'fnf'
-    'body': '<%= f.number_field :${1:field_1}{2:, class: "${3:form-control}"} %>'
+    'body': '<%= f.number_field :${1:field_1}${2:, class: "${3:form-control}"} %>'
 
   'text_area':
     'prefix': 'fta'
