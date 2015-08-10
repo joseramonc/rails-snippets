@@ -38,7 +38,7 @@
 
   'add_foreign_key':
     'prefix': 'afk'
-    'body': 'add_foreign_key :${1:from_table}, :${2:to_table}3:{, options = {}}'
+    'body': 'add_foreign_key :${1:from_table}, :${2:to_table}${3:, options = {}}'
 
   'remove_foreign_key':
     'prefix': 'rfk'
