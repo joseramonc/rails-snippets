@@ -3,7 +3,7 @@
 {CompositeDisposable} = require 'atom'
 
 # erb supported blocks
-ERB_BLOCKS = [['<%=', '%>'], ['<%', '%>'], ['<%#', '%>']]
+ERB_BLOCKS = [['<%=', '%>'], ['<%', '%>'], ['<%-', '-%>'], ['<%=', '-%>'], ['<%#', '%>'], ['<%', '-%>']]
 ERB_REGEX = '<%(=?|-?|#?)\s{2}(-?)%>'
 # matches the opening bracket
 ERB_OPENER_REGEX = '<%[\\=\\#]?'
