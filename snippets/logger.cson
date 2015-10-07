@@ -1,0 +1,13 @@
+'.source.ruby, .source.ruby.rails .meta.rails.controller':
+
+  'logger.debug':
+    'prefix': 'logd'
+    'body': 'Rails.logger.debug { "${1:message}" }'
+
+  'logger.info':
+    'prefix': 'logi'
+    'body': 'Rails.logger.info { "${1:message}" }'
+
+  'logger.error':
+    'prefix': 'loge'
+    'body': 'Rails.logger.info { "${1:message}" }'
