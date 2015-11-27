@@ -74,3 +74,23 @@
   'alias_attribute':
     'prefix': 'ala'
     'body': "alias_attribute :${1:new_name}, :${2:old_name}$0"
+
+
+  'find':
+    'prefix': '.f'
+    'body': '.find(${2:params[:${1:id}]})$0'
+
+  'find_by_attribute':
+    'prefix': '.fb'
+    'body': '.find_by_${1:name}(${3:params[:${2:${1:name}}]})$0'
+
+  'where query':
+    'prefix': '.where'
+    'body': '.where(${1:attribute}: ${2:expected})$0'
+  'where query':
+    'prefix': '.we'
+    'body': '.where(${1:attribute}: ${2:expected})$0'
+
+  'where string':
+    'prefix': '.wheres'
+    'body': '.where("${1:attribute} ${2:=} ?", ${3:expected})$0'
