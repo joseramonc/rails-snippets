@@ -8,6 +8,14 @@
     'prefix': 'logi'
     'body': 'Rails.logger.info { "${1:message}" }'
 
+  'logger.info':
+    'prefix': 'li'
+    'body': 'logger.info $1'
+
+  'logger.info':
+    'prefix': 'log'
+    'body': 'logger.info $1'
+
   'logger.error':
     'prefix': 'loge'
     'body': 'Rails.logger.info { "${1:message}" }'

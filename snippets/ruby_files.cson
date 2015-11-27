@@ -71,14 +71,6 @@
       end
     """
 
-  'do_block':
-    'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
-    'body': """
-       do ${2:|${1:member}|}
-        $3
-      end
-    """
-
   'each block':
     'prefix': '.each'
     'body': """
@@ -102,10 +94,6 @@
         ${3:#code...}
       end $4
     """
-
-  'logger_info':
-    'prefix': 'li'
-    'body': 'logger.info $1'
 
   'update_attribute':
     'prefix': '.ua'
@@ -139,14 +127,6 @@
         $3
       end
     """
-
-  'find':
-    'prefix': '.f'
-    'body': '.find(${1:params[:id]})$2'
-
-  'find_by_attribute':
-    'prefix': '.fb'
-    'body': '.find_by_${1:name}(${2:params[:${3:${1:name}}]})$4'
 
   #just if not using atom official ruby syntax::
   'def':

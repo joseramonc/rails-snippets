@@ -12,11 +12,19 @@
       <% end
     """
 
-  'embedded loop':
-    'prefix': ' do' #(space)do here to beat https://github.com/atom/language-ruby/blob/master/snippets/language-ruby.cson#L142
+  'embedded block':
+    'prefix': 'do'
     'body': """
-       do ${1:|${2:member}|} %>
-        <%= $3 %>
+      do %>
+        <%= $1 %>
+      <% end
+    """
+
+  'embedded block with parm':
+    'prefix': 'dop'
+    'body': """
+      do |${1:member}| %>
+        <%= ${1:member}$2 %>
       <% end
     """
 
