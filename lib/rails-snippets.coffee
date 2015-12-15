@@ -2,15 +2,20 @@
 {Range} = require 'atom'
 {CompositeDisposable} = require 'atom'
 
-# erb supported blocks
-ERB_BLOCKS = [['<%=', '%>'], ['<%', '%>'], ['<%#', '%>']]
 ERB_REGEX = '<%(=?|-?|#?)\s{2}(-?)%>'
 # matches the opening bracket
 ERB_OPENER_REGEX = '<%[\\=\\#]?'
 # matches the closing bracket.
-ERB_CLOSER_REGEX = "%>"
+ERB_CLOSER_REGEX = "-?%>"
 
 module.exports =
+  config:
+    erbBlocks:
+      type: 'array'
+      default: [['<%=', '%>'], ['<%', '%>'], ['<%#', '%>']]
+      items:
+        type: 'array'
+
   activate: ->
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.commands.add 'atom-workspace', 'rails-snippets:toggleErb', => @toggleErb()
@@ -65,7 +70,7 @@ module.exports =
 
   insertErbBlock: (editor, currentCursor) ->
     # inserting the first block in the list
-    defaultBlock = ERB_BLOCKS[0]
+    defaultBlock = atom.config.get('rails-snippets.erbBlocks')[0]
     desiredPosition = null
     # inserting opening bracket
     openingTag = editor.getBuffer().insert currentCursor.getBufferPosition(), defaultBlock[0] + ' '
@@ -85,10 +90,13 @@ module.exports =
     editor.getBuffer().setTextInRange opener, nextBlock[0]
 
   getNextErbBlock: (editor, openingBracket, closingBracket) ->
-    for block, i in ERB_BLOCKS
+    for block, i in atom.config.get('rails-snippets.erbBlocks')
       if JSON.stringify([openingBracket, closingBracket]) == JSON.stringify(block)
         # if outside of scope - returning the first block
-        return if (i + 1) >= ERB_BLOCKS.length then ERB_BLOCKS[0] else ERB_BLOCKS[i + 1]
+        if (i + 1) >= atom.config.get('rails-snippets.erbBlocks').length
+          return atom.config.get('rails-snippets.erbBlocks')[0]
+        else
+          return atom.config.get('rails-snippets.erbBlocks')[i + 1]
 
     # in case we haven't found the block in the list, returning the first one
-    return ERB_BLOCKS[0]
+    return atom.config.get('rails-snippets.erbBlocks')[0]
