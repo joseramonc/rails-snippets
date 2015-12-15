@@ -10,13 +10,30 @@ Please fork this repository and open a pull request to add / improve snippets.
 ## Features
 * Snippets with nice defaults that are definitely going to save your a lot of time.
 
-* Support for the great [package](https://github.com/eddorre/SublimeERB) by [@eddorre](https://github.com/eddorre/):
+* [Toggle between erb blocks](https://github.com/eddorre/SublimeERB):
 
   ![demo](http://cl.ly/image/1P2E1x0h210l/toggle_erb.gif)
 
 Toggle with:  <kbd>cmd</kbd> + <kbd>></kbd>
 
 (In american keyboard: <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>.</kbd>)
+
+#### Customize ERB Blocks (extra configuration)
+In your atom configuration file. Insert each erb block you'd like as an array with the first element as the opening erb and the 2nd element as the closing erb into rails-snippets's erbBlocks configuration array.
+
+As an example of how'd look like:
+```
+# config.cson
+"*":
+  # all your configs...
+  "rails-snippets":
+      erbBlocks: [
+        ['<%=', '%>']
+        ['<%', '%>']
+        ['<%#', '%>']
+      ]
+```
+If you can stick to the default (above) you don't have to do anything. Otherwise add or remove erb blocks in the order you'd like.
 
 ## Conventions
 The conventions for the snippets are usually the initials for the method.
