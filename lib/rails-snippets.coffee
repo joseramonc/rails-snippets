@@ -4,7 +4,7 @@
 
 ERB_REGEX = '<%(=?|-?|#?)\s{2}(-?)%>'
 # matches the opening bracket
-ERB_OPENER_REGEX = '<%[\\=\\#]?'
+ERB_OPENER_REGEX = '<%[\\=\\#\\-]?'
 # matches the closing bracket.
 ERB_CLOSER_REGEX = "-?%>"
 
