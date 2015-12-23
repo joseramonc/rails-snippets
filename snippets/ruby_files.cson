@@ -17,6 +17,14 @@
       end
     """
 
+  'context':
+    'prefix': 'context'
+    'body': """
+      context "when $1" do
+        $2
+      end
+    """
+
   'class':
     'prefix': 'class'
     'body': """
