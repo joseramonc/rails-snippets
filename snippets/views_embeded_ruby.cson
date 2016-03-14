@@ -30,7 +30,7 @@
       <% end
     """
 
-  'embedded image_tag'
+  'embedded image_tag':
     'prefix': 'image'
     'body': 'image_tag "${1:logo}"$0'
 
