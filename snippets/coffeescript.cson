@@ -1,0 +1,4 @@
+'.source.coffee':
+  'Turbolinks ready':
+    'prefix': 'turbolinks-ready'
+    'body': '$(document).on "page:load ready", ->\n  $0'
