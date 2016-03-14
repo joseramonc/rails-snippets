@@ -1,5 +1,7 @@
 '.text.html.erb > .embedded.line.erb > .source.ruby,
-.text.html.ruby > .embedded':
+.text.html.ruby > .embedded,
+.embedded.ruby':
+
   'embedded_font_awesome_icon':
     'prefix': 'fa'
     'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
@@ -28,6 +30,10 @@
       <% end
     """
 
+  'embedded image_tag'
+    'prefix': 'image'
+    'body': 'image_tag "${1:logo}"$0'
+
   'embedded link_to':
     'prefix': 'lt'
     'body': 'link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"}$0'
@@ -36,14 +42,30 @@
     'prefix': 'ltf'
     'body': 'link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:path}'
 
+  'embedded_font_awesome_icon':
+    'prefix': 'fa'
+    'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
+
   'embedded_number_to_currency':
     'prefix': 'ntc'
-    'body': 'number_to_currency ${1:number}'
+    'body': 'number_to_currency $0'
 
   'embedded_number_to_human':
     'prefix': 'nth'
-    'body': 'number_to_human ${1:number}'
-    
+    'body': 'number_to_human $0'
+
+  'embedded_number_to_percentage':
+    'prefix': 'ntp'
+    'body': 'number_to_percentage $0'
+
   'data attributes':
     'prefix': 'data'
     'body': 'data: { ${1:key}: ${2:value} }$0'
+
+  'class key-value':
+    'prefix': 'class'
+    'body': 'class: "$1"$0'
+
+  'id key-value':
+    'prefix': 'id'
+    'body': 'id: "$1"$0'

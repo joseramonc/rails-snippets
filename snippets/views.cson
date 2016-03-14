@@ -74,7 +74,7 @@
 
   'render (partial, object)':
     'prefix': 'rp'
-    'body': '<%= render "${1:shared/errors}", object: @${2:object} %>'
+    'body': '<%= render "${1:shared/errors}", ${2:object}: @${2:object} %>'
 
   'render (partial, locals)':
     'prefix': 'rpl'
@@ -142,7 +142,7 @@
       <% end %>
     """
 
-  'else statement':
+  'else':
     'prefix': 'else'
     'body': '<% else %>'
 
@@ -158,7 +158,7 @@
     'prefix': 'end'
     'body': '<% end %>'
 
-  'font_awesome_icon':
+  'fa ("icon", text: "text")':
     'prefix': 'fa'
     'body': '<%= fa_icon("${1:search}"${2:, text: "${3:Buscar}"}) %>'
 
@@ -166,7 +166,7 @@
     'prefix': 'cur'
     'body': '<%= current_user %>'
 
-  'fa_link':
+  'link_to fa_icon("icon", text: "text"), url':
     'prefix': 'ltf'
     'body': '<%= link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:path} %>'
 
@@ -177,3 +177,7 @@
   'number_to_human':
     'prefix': 'nth'
     'body': '<%= number_to_human ${1:number} %>'
+
+  'number_to_percentage':
+    'prefix': 'nth'
+    'body': '<%= number_to_percentage ${1:number} %>'
