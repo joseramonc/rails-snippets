@@ -60,4 +60,5 @@
         params.require(:${1:model}).permit(
           :${2:attr_1}
         )
+      end
     """
