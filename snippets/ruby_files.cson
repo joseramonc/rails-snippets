@@ -4,7 +4,7 @@
   'it':
     'prefix': 'it'
     'body': """
-      it "should $1" do
+      it "$1" do
         $2
       end
     """
