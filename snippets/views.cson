@@ -146,6 +146,10 @@
     'prefix': 'else'
     'body': '<% else %>'
 
+  'elsif':
+    'prefix': 'elsif'
+    'body': '<% elsif ${0:true} %>'
+
   'russian doll caching':
     'prefix': 'cache'
     'body': """
