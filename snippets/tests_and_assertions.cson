@@ -1,0 +1,60 @@
+'.source.ruby, .source.ruby.rails':
+  'it':
+    'prefix': 'it'
+    'body': """
+      it "$1" do
+        $2
+      end
+    """
+
+  'describe':
+    'prefix': 'describe'
+    'body': """
+      describe "when $1" do
+        $2
+      end
+    """
+
+  'context':
+    'prefix': 'context'
+    'body': """
+      context "when $1" do
+        $2
+      end
+    """
+
+  'def test':
+    'prefix': 'test'
+    'body': """
+      def test_${1:the_truth}
+        ${2:assert true}
+      end
+    """
+
+  'assert_equal':
+    'prefix': 'ate'
+    'body': 'assert_equal ${1:expected}, ${2:actual}${3:, "${4:failure message}"}'
+
+  'assert':
+    'prefix': 'at'
+    'body': 'assert ${1:test}${2:, "${3:failure message}"}'
+
+  'assert_difference':
+    'prefix': 'atd'
+    'body': """
+      assert_difference("${1:User.count}") do
+        $2
+      end
+    """
+
+  'assert_response':
+    'prefix': 'atd'
+    'body': 'assert_response :${1:success}'
+
+  'assert_assigns':
+    'prefix': 'ata'
+    'body': 'assert_not_nil assigns(:${1:users})$0'
+
+  'assert_redirected_to':
+    'prefix': 'atr'
+    'body': 'assert_redirected_to ${1:users}_path(assigns(:${1:users}))$0'

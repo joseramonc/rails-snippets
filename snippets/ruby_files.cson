@@ -1,29 +1,6 @@
 # this snippets are sensitive defaults when working with rails, are intended to
 # be used when the selected syntax is different than Ruby (Ruby on Rails).
 '.source.ruby, .source.ruby.rails':
-  'it':
-    'prefix': 'it'
-    'body': """
-      it "$1" do
-        $2
-      end
-    """
-
-  'describe':
-    'prefix': 'describe'
-    'body': """
-      describe "when $1" do
-        $2
-      end
-    """
-
-  'context':
-    'prefix': 'context'
-    'body': """
-      context "when $1" do
-        $2
-      end
-    """
 
   'class':
     'prefix': 'class'
