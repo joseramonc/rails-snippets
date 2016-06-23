@@ -2,10 +2,6 @@
 .text.html.ruby > .embedded,
 .embedded.ruby':
 
-  'embedded_font_awesome_icon':
-    'prefix': 'fa'
-    'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
-
   'embedded each':
     'prefix': '.each'
     'body': """
@@ -36,15 +32,19 @@
 
   'embedded link_to':
     'prefix': 'lt'
-    'body': 'link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"}$0'
+    'body': 'link_to "${1:text}", ${2:"#"}, ${4:class: "${3:btn btn-primary}"}$0'
 
   'embedded_fa_link':
     'prefix': 'ltf'
-    'body': 'link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:path}'
+    'body': 'link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:"#"}'
+
+  'embedded link_to bst-tooltip':
+    'prefix': 'ltt'
+    'body': 'link_to "${1:text}", ${2:"#"}, ${4:class: "${3:btn btn-primary}"}, data: {toogle: :tooltip, title: "$5" }$0'
 
   'embedded_font_awesome_icon':
     'prefix': 'fa'
-    'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})'
+    'body': 'fa_icon("${1:search}"${2:, text: "${3:Buscar}"})$0'
 
   'embedded_number_to_currency':
     'prefix': 'ntc'
@@ -54,6 +54,10 @@
     'prefix': 'nth'
     'body': 'number_to_human $0'
 
+  'embedded_number_to_human_size':
+    'prefix': 'nths'
+    'body': 'number_to_human_size $0'
+
   'embedded_number_to_percentage':
     'prefix': 'ntp'
     'body': 'number_to_percentage $0'
@@ -62,6 +66,10 @@
     'prefix': 'data'
     'body': 'data: { ${1:key}: ${2:value} }$0'
 
+  'data toggle-tooltip attributes':
+    'prefix': 'datatt'
+    'body': 'data: { toggle: :tooltip, title: "$1" }$0'
+
   'class key-value':
     'prefix': 'class'
     'body': 'class: "$1"$0'
@@ -69,3 +77,7 @@
   'id key-value':
     'prefix': 'id'
     'body': 'id: "$1"$0'
+
+  'placeholder key-value':
+    'prefix': 'ph'
+    'body': 'placeholder: "$1"$0'

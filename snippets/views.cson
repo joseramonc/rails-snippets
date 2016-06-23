@@ -20,18 +20,26 @@
     'prefix': 'ofcfs'
     'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name}, ${4:f.object.${5:product_id}})$0'
 
+  'options_for_select':
+    'prefix': 'ofs'
+    'body': 'options_for_select'
+
   'link_to':
     'prefix': 'lt'
-    'body': '<%= link_to "${1:text}", ${2:path}, ${4:class: "${3:btn btn-primary}"} %>$0'
+    'body': '<%= link_to "${1:text}", ${2:"#"}, ${4:class: "${3:btn btn-primary}"} %>$0'
 
   'link_to_method':
     'prefix': 'ltm'
-    'body': '<%= link_to "${1:text}", ${2:path}, method: :${3:post} %>'
+    'body': '<%= link_to "${1:text}", ${2:"#"}, method: :${3:post} %>'
+
+  'link_to_tooltip':
+    'prefix': 'ltt'
+    'body': '<%= link_to "${1:text}", ${2:"#"}, data: { toggle: :tooltip, title: "$3" } %>'
 
   'link_to_block':
     'prefix': 'ltblock'
     'body': """
-      <%= link_to ${1:path}, class: "${2:btn btn-primary}" do %>
+      <%= link_to ${1:"#"}, class: "${2:btn btn-primary}" do %>
         ${3:<%= ${4:fa_icon('${5:search}')} %>}$6
       <% end %>
     """
@@ -47,7 +55,7 @@
   'button_to_block':
     'prefix': 'btblock'
     'body': """
-      <%= link_to ${1:path}, class: "${2:btn btn-primary}" do %>
+      <%= link_to ${1:"#"}, class: "${2:btn btn-primary}" do %>
         ${3:<%= ${4:fa_icon('${5:search}')} %>}$6
       <% end %>
     """
@@ -73,8 +81,8 @@
     'body': '<%= render "${1:partial}" %>'
 
   'render (partial, object)':
-    'prefix': 'rp'
-    'body': '<%= render "${1:shared/errors}", ${2:object}: @${2:object} %>'
+    'prefix': 'rpo'
+    'body': '<%= render "${1:shared/errors}", ${2:object}: ${3:@${2:object}}, $0 %>'
 
   'render (partial, locals)':
     'prefix': 'rpl'
@@ -154,7 +162,7 @@
     'prefix': 'cache'
     'body': """
       <% cache ["${1:key}", ${2:object}] do %>
-        $3
+        $0
       <% end %>
     """
 
@@ -164,11 +172,11 @@
 
   'fa ("icon", text: "text")':
     'prefix': 'fa'
-    'body': '<%= fa_icon("${1:search}"${2:, text: "${3:Buscar}"}) %>'
+    'body': '<%= fa_icon("${1:search}"${2:, text: "${3:Buscar}"}) %>$0'
 
   'current_user':
     'prefix': 'cur'
-    'body': '<%= current_user %>'
+    'body': '<%= current_user$0 %>'
 
   'link_to fa_icon("icon", text: "text"), url':
     'prefix': 'ltf'
