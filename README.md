@@ -1,9 +1,9 @@
 # rails-snippets package
 An [atom](https://atom.io) package to add snippets for Ruby on Rails projects.
 
-Developed with Ruby 1.9 syntax (`key: 'value'`) and rails 4 onwards in mind, but most code in the snippets is going to work on Rails 3 too.
+Developed with Ruby 1.9 syntax (`key: 'value'`) and rails 5 onwards in mind, but most snippets work on older versions too.
 
-Contributions are greatly appreciated, if your favorite snippets are missing [open an issue](https://github.com/joseramonc/railsteroids/issues) or send a pull request, I would :heart: to merge your favorite snippets.
+Contributions are greatly appreciated, if your favorite snippets are missing [open an issue](https://github.com/joseramonc/rails-snippets/issues) or send a pull request, I would :heart: to merge your favorite snippets.
 
 Please fork this repository and open a pull request to add / improve snippets.
 
@@ -18,14 +18,14 @@ Toggle with:  <kbd>cmd</kbd> + <kbd>></kbd>
 
 (In american keyboard: <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>.</kbd>)
 
-#### Customize ERB Blocks (extra configuration)
-In your atom configuration file. Insert each erb block you'd like as an array with the first element as the opening erb and the 2nd element as the closing erb into rails-snippets's erbBlocks configuration array.
+#### [OPTIONAL] Customize ERB Blocks
+In your atom configuration file (`config.cson`). Insert each erb block you'd like as an array with the first element as the opening erb and the 2nd element as the closing erb into rails-snippets's erbBlocks configuration array.
 
 As an example of how'd look like:
 ```
 # config.cson
 "*":
-  # all your configs...
+  # all your other configs...
   "rails-snippets":
       erbBlocks: [
         ['<%=', '%>']

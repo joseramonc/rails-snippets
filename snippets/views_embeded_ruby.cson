@@ -70,6 +70,10 @@
     'prefix': 'datatt'
     'body': 'data: { toggle: :tooltip, title: "$1" }$0'
 
+  'data turbolinks false':
+    'prefix': 'datatl'
+    'body': 'data: { turbolinks: :${1:false} }$0'
+
   'class key-value':
     'prefix': 'class'
     'body': 'class: "$1"$0'
@@ -81,3 +85,11 @@
   'placeholder key-value':
     'prefix': 'ph'
     'body': 'placeholder: "$1"$0'
+
+  'turbolinks key-value':
+    'prefix': 'dtl'
+    'body': 'turbolinks: :${1:false}$0'
+
+  'toggle-tooltip key-value':
+    'prefix': 'dtt'
+    'body': 'toggle: :tooltip, title: ${2:"${1:Hola!}"}$0'

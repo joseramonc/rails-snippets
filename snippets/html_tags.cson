@@ -1,4 +1,5 @@
-'.meta.tag.inline.any.html':
+'.meta.tag.any.html':
+
   'data-attribute':
     'prefix': 'data'
     'body': 'data-${1:name}="${2:hello}"$0'
@@ -10,3 +11,7 @@
   'id':
     'prefix': 'id'
     'body': 'id="${1:btn-preview}"$0'
+
+  'data-turbolinks':
+    'prefix': 'datatl'
+    'body': 'data-turbolinks="${1:false}"$0'

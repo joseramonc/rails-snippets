@@ -1,24 +1,31 @@
 '.source.coffee':
-  'Turbolinks page:load ready':
-    'prefix': 'ready'
-    'body': '$(document).on "page:load ready", ->\n  $0'
+  'Turbolinks load':
+    'prefix': 'load'
+    'body': '$(document).on "turbolinks:load", ->\n  $0'
 
   'Document on keypress':
-    'prefix': 'dokp'
+    'prefix': 'dokeypress'
     'body': """
       $(document).on "keypress", "${1:#}", ->
         $0
     """
 
   'Document on keyup':
-    'prefix': 'doku'
+    'prefix': 'dokeyup'
     'body': """
       $(document).on "keyup", "${1:#}", ->
         $0
     """
 
   'Document on click':
-    'prefix': 'doc'
+    'prefix': 'doclick'
+    'body': """
+      $(document).on "click", "${1:#}", ->
+        $0
+    """
+
+  'Document on change':
+    'prefix': 'dochange'
     'body': """
       $(document).on "click", "${1:#}", ->
         $0
