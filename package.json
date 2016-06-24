@@ -24,7 +24,5 @@
   "engines": {
     "atom": "*"
   },
-  "dependencies": {
-    "underscore-plus": "1.x"
-  }
+  "dependencies": { }
 }
