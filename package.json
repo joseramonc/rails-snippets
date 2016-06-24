@@ -1,6 +1,6 @@
 {
   "name": "rails-snippets",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "main": "./lib/rails-snippets",
   "activationCommands": {
     "atom-text-editor": [
@@ -24,5 +24,5 @@
   "engines": {
     "atom": "*"
   },
-  "dependencies": { }
+  "dependencies": {}
 }
