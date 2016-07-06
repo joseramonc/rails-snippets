@@ -32,14 +32,18 @@
 
   'embedded link_to':
     'prefix': 'lt'
+    'description': 'link_to(name = nil, options = nil, html_options = nil, &block)'
+    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to'
     'body': 'link_to "${1:text}", ${2:"#"}, ${4:class: "${3:btn btn-primary}"}$0'
 
   'embedded_fa_link':
     'prefix': 'ltf'
+    'description': "link_to(fa_icon('user'), ... )"
     'body': 'link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:"#"}'
 
   'embedded link_to bst-tooltip':
     'prefix': 'ltt'
+    'description': "link_to( ..., data: { toggle: :tooltip, title: :title } )"
     'body': 'link_to "${1:text}", ${2:"#"}, ${4:class: "${3:btn btn-primary}"}, data: {toogle: :tooltip, title: "$5" }$0'
 
   'embedded_font_awesome_icon':
@@ -64,32 +68,44 @@
 
   'data attributes':
     'prefix': 'data'
+    'description': "data: { key: :value }"
     'body': 'data: { ${1:key}: ${2:value} }$0'
 
   'data toggle-tooltip attributes':
     'prefix': 'datatt'
+    'description': "data: { toggle: :tooltip, title: 'title' }"
     'body': 'data: { toggle: :tooltip, title: "$1" }$0'
 
   'data turbolinks false':
     'prefix': 'datatl'
+    'description': "data: { turbolinks: :false }"
     'body': 'data: { turbolinks: :${1:false} }$0'
+
+  'method':
+    'prefix': 'method'
+    'body': 'method: :${1:post}'
 
   'class key-value':
     'prefix': 'class'
+    'description': "class: 'class'"
     'body': 'class: "$1"$0'
 
   'id key-value':
     'prefix': 'id'
+    'description': "id: 'id'"
     'body': 'id: "$1"$0'
 
   'placeholder key-value':
     'prefix': 'ph'
+    'description': "placeholder: 'hi'"
     'body': 'placeholder: "$1"$0'
 
   'turbolinks key-value':
     'prefix': 'dtl'
+    'description': 'turbolinks: :false'
     'body': 'turbolinks: :${1:false}$0'
 
   'toggle-tooltip key-value':
     'prefix': 'dtt'
+    'description': "toggle: :tooltip, title: 'hi'"
     'body': 'toggle: :tooltip, title: ${2:"${1:Hola!}"}$0'

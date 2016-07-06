@@ -1,17 +1,21 @@
 '.meta.tag.any.html':
 
   'data-attribute':
-    'prefix': 'data'
+    'prefix': 'dataa'
+    'description': 'data-attribute="value"'
     'body': 'data-${1:name}="${2:hello}"$0'
 
   'class':
     'prefix': 'class'
+    'description': 'class="class"'
     'body': 'class="${1:btn btn-primary}"$0'
 
   'id':
     'prefix': 'id'
+    'description': 'id="id"'
     'body': 'id="${1:btn-preview}"$0'
 
   'data-turbolinks':
     'prefix': 'datatl'
+    'description': 'data-turbolinks="value"'
     'body': 'data-turbolinks="${1:false}"$0'

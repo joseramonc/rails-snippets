@@ -32,29 +32,39 @@
     """
 
   'assert_equal':
-    'prefix': 'ate'
+    'prefix': 'ase'
     'body': 'assert_equal ${1:expected}, ${2:actual}${3:, "${4:failure message}"}'
 
   'assert':
-    'prefix': 'at'
+    'prefix': 'ast'
     'body': 'assert ${1:test}${2:, "${3:failure message}"}'
 
   'assert_difference':
-    'prefix': 'atd'
+    'prefix': 'asd'
+    'description': 'assert_difference(expression, difference = 1, message = nil, &block)'
     'body': """
       assert_difference("${1:User.count}") do
         $2
       end
     """
 
+  'assert_no_difference':
+    'prefix': 'asnd'
+    'description': 'assert_no_difference(expression, message = nil, &block)'
+    'body': """
+      assert_no_difference("${1:User.count}") do
+        $2
+      end
+    """
+
   'assert_response':
-    'prefix': 'atd'
+    'prefix': 'asre'
     'body': 'assert_response :${1:success}'
 
   'assert_assigns':
-    'prefix': 'ata'
+    'prefix': 'asnn'
     'body': 'assert_not_nil assigns(:${1:users})$0'
 
   'assert_redirected_to':
-    'prefix': 'atr'
+    'prefix': 'asr'
     'body': 'assert_redirected_to ${1:users}_path(assigns(:${1:users}))$0'
