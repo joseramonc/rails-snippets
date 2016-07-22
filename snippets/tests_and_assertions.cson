@@ -23,21 +23,30 @@
       end
     """
 
-  'def test':
+  'test case':
     'prefix': 'test'
     'body': """
-      def test_${1:the_truth}
+      test "when ${1:method_or_case}" do
         ${2:assert true}
       end
     """
 
-  'assert_equal':
-    'prefix': 'ase'
-    'body': 'assert_equal ${1:expected}, ${2:actual}${3:, "${4:failure message}"}'
-
   'assert':
     'prefix': 'ast'
-    'body': 'assert ${1:test}${2:, "${3:failure message}"}'
+    'body': 'assert ${1:true}${2:, "${3:expected ${1:true} to be true}"}'
+
+  'assert_not':
+    'prefix': 'astn'
+    'body': 'assert_not ${1:false}'
+
+  'assert_equal':
+    'prefix': 'ase'
+    'body': 'assert_equal ${1:expected}, ${2:actual}${3:, "${4:expected `${2:actual}` to be `${1:expected}`}"}'
+
+  'assert_in_delta':
+    'prefix': 'asde'
+    'description': 'assert_in_delta(expected_float, actual_float, delta, message="")'
+    'body': 'assert_in_delta ${1:expected_float}, ${2:actual_float}, ${3:delta}, "${4:float didn\'t matched}"$0'
 
   'assert_difference':
     'prefix': 'asd'
@@ -61,10 +70,6 @@
     'prefix': 'asre'
     'body': 'assert_response :${1:success}'
 
-  'assert_assigns':
-    'prefix': 'asnn'
-    'body': 'assert_not_nil assigns(:${1:users})$0'
-
   'assert_redirected_to':
     'prefix': 'asr'
-    'body': 'assert_redirected_to ${1:users}_path(assigns(:${1:users}))$0'
+    'body': 'assert_redirected_to ${1:users}_path$0'
