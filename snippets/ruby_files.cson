@@ -13,7 +13,7 @@
   'model':
     'prefix': 'model'
     'body': """
-      class ${1:User} ${2:< ${3:ActiveRecord::Base}}
+      class ${1:User} ${2:< ${3:ApplicationRecord}}
         ${4:# lot of code :D}
       end
     """
@@ -38,8 +38,8 @@
     'body': """
       module ${1:ConcernName}
         extend ActiveSupport::Concern
-        ${3:included do
-          ${2:# code ...}
+        ${2:included do
+          ${3:# code ...}
         end}
 
         # instance methods go here

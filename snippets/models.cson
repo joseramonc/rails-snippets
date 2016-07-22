@@ -7,12 +7,12 @@
         :${2:active},
         :${3:unactive},
         :${4:archieved}
-      ]$5
+      ]$0
     """
 
   'scope':
     'prefix': 'scope'
-    'body': 'scope :${1:scope_name}, -> { ${2:where(${3:field}: ${4:true})} $5 }'
+    'body': 'scope :${1:scope_name}, -> { ${2:where(${3:${4:field}: ${5:true}})  } $0}'
 
   'scope_params':
     'prefix': 'scopep'
@@ -39,17 +39,18 @@
           ${3:Time.now.at_beginning_of_day},
           ${4:Time.now.at_end_of_day}
         )
-      end$5
+      end$0
     """
 
   'scope_joins':
     'prefix': 'scopej'
     'body': """
       scope :${1:scope_name},
-        joins(:${2:table_name}).where(
+        joins(:${2:table_name})
+        .where(
           "${2:table_name}.${3:join_table_attribute} ${4:=} ?",
           ${5:true}
-        )$6
+        )$0
     """
 
   'scope_joins_with_parameter':
@@ -60,7 +61,7 @@
           "${3:table_name}.${4:join_table_attribute} ${5:=} ?",
           ${2:attribute}
         )
-      end$7
+      end$0
     """
 
   'default_scope':
@@ -68,13 +69,12 @@
     'body': """
       default_scope do
         ${2:where(${3:field}: ${4:true})}
-      end $5
+      end$0
     """
 
   'alias_attribute':
     'prefix': 'ala'
     'body': "alias_attribute :${1:new_name}, :${2:old_name}$0"
-
 
   'find':
     'prefix': '.f'
@@ -92,5 +92,5 @@
     'body': '.where(${1:attribute}: ${2:expected})$0'
 
   'where string':
-    'prefix': '.wheres'
-    'body': '.where("${1:attribute} ${2:=} ?", ${3:expected})$0'
+    'prefix': '.wherel'
+    'body': '.where("${1:attribute} LIKE ?", "%#{${2:expected}}%")$0'
