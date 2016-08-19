@@ -130,6 +130,15 @@
       <% end %>
     """
 
+  'unless statement':
+    'prefix': 'unless'
+    'description': 'unless statement'
+    'body': """
+      <% unless ${1:true} %>
+        ${2:<!-- true -->}
+      <% end %>
+    """
+
   'if else statement':
     'prefix': 'ife'
     'descrition': 'if else multiline statement'
