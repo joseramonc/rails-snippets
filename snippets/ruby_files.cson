@@ -93,12 +93,12 @@
       )
     """
 
-  'else statement':
-    'prefix': 'else'
+  'elsif statement':
+    'prefix': 'elsif'
     'body': 'elsif ${1:true}'
 
   'elsif else statement':
-    'prefix': 'elsee'
+    'prefix': 'elsife'
     'body': """
       elsif ${1:true}
         ${2:#code}

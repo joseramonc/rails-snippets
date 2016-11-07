@@ -179,7 +179,7 @@
 
   'current_user':
     'prefix': 'cur'
-    'description': 'current_user provided usually by devise'
+    'description': 'current_user'
     'body': '<%= current_user$0 %>'
 
   'link_to fa_icon("icon", text: "text"), url':
