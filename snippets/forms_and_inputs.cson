@@ -95,7 +95,7 @@
           :${1:enum_attribute},
           f.object.class.${1:enum_attribute}s.to_a.map {|e|
             [
-              e.first,
+              e.first, # label
               e.first
             ]
           },
