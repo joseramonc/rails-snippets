@@ -41,7 +41,7 @@
 
   'assert_equal':
     'prefix': 'ase'
-    'body': 'assert_equal ${1:expected}, ${2:actual}${3:, "${4:expected `${2:actual}` to be `${1:expected}`}"}'
+    'body': 'assert_equal ${1:expected}, ${2:actual}${3:, "${4:expected}"'
 
   'assert_in_delta':
     'prefix': 'asde'

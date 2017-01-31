@@ -19,3 +19,7 @@
   'logger.error':
     'prefix': 'loge'
     'body': 'Rails.logger.info { "${1:message}" }'
+
+  'puts debugger':
+    'prefix': 'puts*'
+    'body': 'puts "****************************************"'

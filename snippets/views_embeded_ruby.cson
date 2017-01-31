@@ -96,6 +96,11 @@
     'description': "id: 'id'"
     'body': 'id: "$1"$0'
 
+  'style key-value':
+    'prefix': 'style'
+    'description': "style: 'cssprop: value;'"
+    'body': 'style: "${1:display: none;}"$0'
+
   'placeholder key-value':
     'prefix': 'ph'
     'description': "placeholder: 'hi'"
@@ -105,6 +110,11 @@
     'prefix': 'dtl'
     'description': 'turbolinks: :false'
     'body': 'turbolinks: :${1:false}$0'
+
+  'remote true key-value':
+    'prefix': 'remote'
+    'description': 'remote: true'
+    'body': 'remote: true$0'
 
   'toggle-tooltip key-value':
     'prefix': 'dtt'

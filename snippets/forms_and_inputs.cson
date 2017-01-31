@@ -13,10 +13,10 @@
   'form_tag':
     'prefix': 'form_tag'
     'body': """
-      <%= form_tag ${1:submission_path}, method: :${2:get}, class: "navbar-form navbar-left search-form" do %>
+      <%= form_tag ${1:submission_path}, method: :${2:get}, class: "${3:navbar-form navbar-left search-form}" do %>
         <%= text_field_tag(
-            :${3:search},
-            params[:${3:search}],
+            :${4:search},
+            params[:${4:search}],
             placeholder: "Search",
             class: "form-control"
         ) %>
@@ -45,19 +45,11 @@
 
   'number_field':
     'prefix': 'fnf'
-    'body': '<%= f.number_field :${1:field}${2:, class: "${3:form-control}"} %>'
+    'body': '<%= f.number_field :${1:field}${2:, class: "${3:form-control}"}, step: "0.01" %>'
 
   'text_area':
     'prefix': 'fta'
     'body': '<%= f.text_area :${1:field}${2:, class: "${3:form-control}"} %>'
-
-  'date_select':
-    'prefix': 'fds'
-    'body': '<%= f.date_select :${1:field}, class: "${2:form-control}" %>'
-
-  'datetime_select':
-    'prefix': 'fdts'
-    'body': '<%= f.datetime_select :${1:field}, class: "${2:form-control}" %>'
 
   'collection_select':
     'prefix': 'fcs'

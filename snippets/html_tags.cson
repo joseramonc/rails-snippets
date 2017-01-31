@@ -15,6 +15,16 @@
     'description': 'id="id"'
     'body': 'id="${1:btn-preview}"$0'
 
+  'style':
+    'prefix': 'style'
+    'description': 'style="cssprop: value;"'
+    'body': 'style="${1:display: none;}"$0'
+
+  'placeholder':
+    'prefix': 'placeholder'
+    'description': 'placeholder="placeholder"'
+    'body': 'placeholder="${1:John Doe}"$0'
+
   'data-turbolinks':
     'prefix': 'datatl'
     'description': 'data-turbolinks="value"'

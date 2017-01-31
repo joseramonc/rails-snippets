@@ -6,35 +6,40 @@
 
   'Document on keypress':
     'prefix': 'dokeypress'
-    'description': "$(document).on 'keypress', '#selector', ->"
+    'description': "$(document).on 'keypress', '.selector', ->"
     'body': """
-      $(document).on "keypress", "${1:#}", ->
+      $(document).on "keypress", ".$1", ->
         $0
     """
 
   'Document on keyup':
     'prefix': 'dokeyup'
-    'description': "$(document).on 'keyup', '#selector', ->"
+    'description': "$(document).on 'keyup', '.selector', ->"
     'body': """
-      $(document).on "keyup", "${1:#}", ->
+      $(document).on "keyup", ".$1", ->
         $0
     """
 
   'Document on click':
     'prefix': 'doclick'
-    'description': "$(document).on 'click', '#selector', ->"
+    'description': "$(document).on 'click', '.selector', ->"
     'body': """
-      $(document).on "click", "${1:#}", ->
+      $(document).on "click", ".$1", ->
         $0
     """
 
   'Document on change':
     'prefix': 'dochange'
-    'description': "$(document).on 'change', '#selector', ->"
+    'description': "$(document).on 'change', '.selector', ->"
     'body': """
-      $(document).on "change", "${1:#}", ->
+      $(document).on "change", ".$1", ->
         $0
     """
+
+  'jQuery':
+    'prefix': '$$'
+    'description': "$('selector')"
+    'body': '$(".$1")$0'
 
   '$.ajax':
     'prefix': '$.ajax'
