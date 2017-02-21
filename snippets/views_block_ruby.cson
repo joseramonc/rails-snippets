@@ -1,0 +1,28 @@
+'.text.html.erb > .embedded.line.erb > .source.ruby,
+.text.html.erb > .embedded.line.erb > .embedded.end.erb,
+.text.html.ruby > .embedded,
+.embedded.ruby':
+
+  'embedded each':
+    'prefix': '.each'
+    'body': """
+      .each do |${1:member}| %>
+        <%= ${1:member} $2 %>
+      <% end
+    """
+
+  'embedded block':
+    'prefix': 'do'
+    'body': """
+      do %>
+        <%= $1 %>
+      <% end
+    """
+
+  'embedded block with parm':
+    'prefix': 'dop'
+    'body': """
+      do |${1:member}| %>
+        <%= ${1:member}$2 %>
+      <% end
+    """

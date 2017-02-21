@@ -1,58 +1,8 @@
 '.text.html.erb > .embedded.line.erb > .source.ruby,
 .text.html.erb > .embedded.line.erb > .embedded.end.erb,
 .text.html.ruby > .embedded,
-.embedded.ruby':
-
-  'embedded each':
-    'prefix': '.each'
-    'body': """
-      .each do |${1:member}| %>
-        <%= ${1:member} $2 %>
-      <% end
-    """
-
-  'embedded block':
-    'prefix': 'do'
-    'body': """
-      do %>
-        <%= $1 %>
-      <% end
-    """
-
-  'embedded block with parm':
-    'prefix': 'dop'
-    'body': """
-      do |${1:member}| %>
-        <%= ${1:member}$2 %>
-      <% end
-    """
-
-'.text.haml > .line.ruby.haml > .source.ruby':
-  'haml embedded each':
-    'prefix': '.each'
-    'body': """
-      .each do |${1:member}|
-        = ${1:member} $2
-    """
-
-  'haml embedded block':
-    'prefix': 'do'
-    'body': """
-      do
-        = $1
-    """
-
-  'haml embedded block with parm':
-    'prefix': 'dop'
-    'body': """
-      do |${1:member}|
-        = ${1:member}$2
-    """
-
-'.text.html.erb > .embedded.line.erb > .source.ruby,
-.text.html.erb > .embedded.line.erb > .embedded.end.erb,
-.text.html.ruby > .embedded,
-.text.haml > .line.ruby.haml > .source.ruby
+.text.haml > .line.ruby.haml > .source.ruby,
+.text.haml > .line.ruby.haml > .source.ruby.embedded.html,
 .embedded.ruby':
 
   'embedded image_tag':
