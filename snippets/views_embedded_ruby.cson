@@ -27,6 +27,34 @@
       <% end
     """
 
+'.text.haml > .line.ruby.haml > .source.ruby':
+  'haml embedded each':
+    'prefix': '.each'
+    'body': """
+      .each do |${1:member}|
+        = ${1:member} $2
+    """
+
+  'haml embedded block':
+    'prefix': 'do'
+    'body': """
+      do
+        = $1
+    """
+
+  'haml embedded block with parm':
+    'prefix': 'dop'
+    'body': """
+      do |${1:member}|
+        = ${1:member}$2
+    """
+
+'.text.html.erb > .embedded.line.erb > .source.ruby,
+.text.html.erb > .embedded.line.erb > .embedded.end.erb,
+.text.html.ruby > .embedded,
+.text.haml > .line.ruby.haml > .source.ruby
+.embedded.ruby':
+
   'embedded image_tag':
     'prefix': 'image'
     'body': 'image_tag "${1:logo}"$0'
