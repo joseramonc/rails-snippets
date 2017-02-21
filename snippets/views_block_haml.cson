@@ -1,0 +1,22 @@
+'.text.haml > .line.ruby.haml > .source.ruby,
+.text.haml > .line.ruby.haml > .source.ruby.embedded.html':
+  'haml embedded each':
+    'prefix': '.each'
+    'body': """
+      .each do |${1:member}|
+        = ${1:member} $2
+    """
+
+  'haml embedded block':
+    'prefix': 'do'
+    'body': """
+      do
+        = $1
+    """
+
+  'haml embedded block with parm':
+    'prefix': 'dop'
+    'body': """
+      do |${1:member}|
+        = ${1:member}$2
+    """
