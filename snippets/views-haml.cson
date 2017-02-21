@@ -1,4 +1,4 @@
-'.text.html.haml, .text.haml':
+'.text.haml':
   'render-block':
     'prefix': '='
     'body': '= $1'
