@@ -8,7 +8,7 @@ Contributions are greatly appreciated, if your favorite snippets are missing [op
 Please fork this repository and open a pull request to add / improve snippets.
 
 ## Features
-* Snippets with nice defaults that are definitely going to save your a lot of time.
+* Support .html.erb and .html.haml templates
 
 * [Toggle between erb blocks](https://github.com/eddorre/SublimeERB):
 
