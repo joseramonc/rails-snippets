@@ -195,5 +195,5 @@
     'body': '<%= number_to_human ${1:number} %>'
 
   'number_to_percentage':
-    'prefix': 'nth'
+    'prefix': 'ntp'
     'body': '<%= number_to_percentage ${1:number} %>'

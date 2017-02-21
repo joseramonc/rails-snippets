@@ -1,0 +1,184 @@
+'.text.haml':
+  'render-block':
+    'prefix': '='
+    'body': '= $1'
+
+  'exec-block':
+    'prefix': '-'
+    'body': '- $1'
+
+  'loop_block':
+    'prefix': '-loop'
+    'body': """
+      - ${1:array}.each do |${2:element}|
+        = $3
+    """
+
+  'options_from_collection_for_select':
+    'prefix': 'ofcfs'
+    'description': 'options_from_collection_for_select(collection, value_method, text_method, selected = nil)'
+    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-options_from_collection_for_select'
+    'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name}, ${4:f.object.${5:product_id}})$0'
+
+  'options_for_select':
+    'prefix': 'ofs'
+    'description': 'options_for_select(container, selected = nil)'
+    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-options_for_select'
+    'body': 'options_for_select'
+
+  'link_to':
+    'prefix': 'lt'
+    'description': 'link_to(name = nil, options = nil, html_options = nil, &block)'
+    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to'
+    'body': '= link_to "${1:text}", ${2:"#"}, ${4:class: "${3:btn btn-primary}"} $0'
+
+  'link_to_method':
+    'prefix': 'ltm'
+    'description': 'link_to ..., method: :method'
+    'body': '= link_to "${1:text}", ${2:"#"}, method: :${3:post}'
+
+  'link_to_tooltip':
+    'prefix': 'ltt'
+    'description': 'link_to ..., data: { toggle: :tooltip, title: "." }'
+    'body': '= link_to "${1:text}", ${2:"#"}, data: { toggle: :tooltip, title: "$3" }'
+
+  'link_to_block':
+    'prefix': 'ltblock'
+    'description': 'link_to(name = nil, options = nil, html_options = nil, &block)'
+    'body': """
+      = link_to ${1:"#"}, class: "${2:btn btn-primary}" do
+        ${3:= ${4:fa_icon('${5:search}')} }$6
+    """
+
+  'button_to':
+    'prefix': 'bt'
+    'description': 'button_to(name = nil, options = nil, html_options = nil, &block)'
+    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-button_to'
+    'body': '= button_to "${1:text}", ${2:path}, class: "${3:btn btn-primary}" $0'
+
+  'image_tag':
+    'prefix': 'image'
+    'body': '= image_tag $1'
+
+  'render (partial)':
+    'prefix': 'rp'
+    'description': "= render 'partial'"
+    'body': '= render "${1:partial}"'
+
+  'render (partial, object)':
+    'prefix': 'rpo'
+    'body': '= render "${1:shared/errors}", ${2:object}: ${3:@${2:object}}, $0'
+
+  'render (partial, locals)':
+    'prefix': 'rpl'
+    'body': '= render "${1:d}", ${2:variable}: ${3:object}$4'
+
+  'content_tag':
+    'prefix': 'ct'
+    'body': '= content_tag :${1:div}, ${2:nil}, ${3:key}: "${4:value}"'
+
+  'content_tag_block':
+    'prefix': 'ctblock'
+    'body': """
+      = content_tag :${1:div}, ${2:key}: "${3:value}" do
+        ${4:<!-- content -->}
+    """
+
+  'content_for':
+    'prefix': 'cf'
+    'body': """
+      = content_for :${1:block} do
+        ${2:<!-- content -->}
+    """
+
+  'yield':
+    'prefix': 'yield'
+    'body': '= yield :${1:block_name}'
+
+  'javascrit_include_tag':
+    'prefix': 'jit'
+    'body': '= javascript_include_tag "${1:file_name}", "data-turbolinks-track" => true'
+
+  'stylesheet_link_tag':
+    'prefix': 'slt'
+    'body': '= stylesheet_link_tag "${1:file_name}", media: "all", "data-turbolinks-track" => true'
+
+  'favicon_link_tag':
+    'prefix': 'flt'
+    'body': '= favicon_link_tag "favicon.ico"'
+
+  '.each with index':
+    'prefix': '.ewi'
+    'description': 'each with index'
+    'body': """
+      .each_with_index do |$1, index|
+        = $2
+    """
+
+  'if statement':
+    'prefix': 'if'
+    'description': 'if statement'
+    'body': """
+      - if ${1:true}
+        ${2:<!-- true -->}
+    """
+
+  'unless statement':
+    'prefix': 'unless'
+    'description': 'unless statement'
+    'body': """
+      - unless ${1:true}
+        ${2:<!-- true -->}
+    """
+
+  'if else statement':
+    'prefix': 'ife'
+    'descrition': 'if else multiline statement'
+    'body': """
+      - if ${1:true}
+        ${2:<!-- true -->}
+      - else
+        ${3:<!-- false -->}
+    """
+
+  'else':
+    'prefix': 'else'
+    'description': '- else'
+    'body': '- else'
+
+  'elsif':
+    'prefix': 'elsif'
+    'body': '- elsif ${0:true}'
+
+  'russian doll caching':
+    'prefix': 'cache'
+    'body': """
+      - cache ["${1:key}", ${2:object}] do
+        $0
+    """
+
+  'fa_icon("icon", text: "text")':
+    'prefix': 'fa'
+    'description': 'fa_icon(names = "flag", options = {})'
+    'body': '= fa_icon("${1:search}"${2:, text: "${3:Buscar}"})$0'
+
+  'current_user':
+    'prefix': 'cur'
+    'description': 'current_user'
+    'body': '<%= current_user$0 %>'
+
+  'link_to fa_icon("icon", text: "text"), url':
+    'prefix': 'ltf'
+    'body': '= link_to fa_icon("${1:search}"${2:, ${3:text}: "${4:Buscar}"}), ${5:path}'
+
+  'number_to_currency':
+    'prefix': 'ntc'
+    'body': '= number_to_currency ${1:number}'
+
+  'number_to_human':
+    'prefix': 'nth'
+    'body': '= number_to_human ${1:number}'
+
+  'number_to_percentage':
+    'prefix': 'ntp'
+    'body': '= number_to_percentage ${1:number}'

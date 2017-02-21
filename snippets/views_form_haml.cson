@@ -1,0 +1,126 @@
+'.text.haml':
+  'form_for':
+    'prefix': 'form_for'
+    'body': """
+      = form_for ${1} do |f|
+        ${2:= render "shared/errors", object: ${1}}
+        ${3:= f.text_field :${4:field}}
+        ${0}
+    """
+
+  'form_tag':
+    'prefix': 'form_tag'
+    'body': """
+      = form_tag ${1:submission_path}, method: :${2:get}, class: "${3:navbar-form navbar-left search-form}" do
+        = text_field_tag(
+            :${4:search},
+            params[:${4:search}],
+            placeholder: "Search",
+            class: "form-control")
+    """
+
+  'label_field':
+    'prefix': 'fl'
+    'body': '= f.label :${1:field}${2:, class: "${3:control-label}"}$0'
+
+  'text_field':
+    'prefix': 'ftf'
+    'body': '= f.text_field :${1:field}${2:, class: "${3:form-control}"}'
+
+  'password_field':
+    'prefix': 'fpf'
+    'body': '= f.password_field :${1:field}${2:, class: "${3:form-control}"}'
+
+  'email_field':
+    'prefix': 'fes'
+    'body': '= f.email_field :${1:field}${2:, class: "${3:form-control}"}'
+
+  'hidden_field':
+    'prefix': 'fhf'
+    'body': '= f.hidden_field :${1:field}, value: "${2:true}"'
+
+  'number_field':
+    'prefix': 'fnf'
+    'body': '= f.number_field :${1:field}${2:, class: "${3:form-control}"}, step: "0.01"'
+
+  'text_area':
+    'prefix': 'fta'
+    'body': '= f.text_area :${1:field}${2:, class: "${3:form-control}"}'
+
+  'collection_select':
+    'prefix': 'fcs'
+    'body': """
+      = f.collection_select(
+            :${1:resource_id},
+            @${2:collection},
+            :${3:id},
+            :${4:name},
+            { ${5:include_blank: "${6:Please select one}"} },
+            { ${7:class: "${8:form-control}"} })
+    """
+
+  'select_field':
+    'prefix': 'fsf'
+    'body': """
+      = f.select(
+          :${1:resource_id},
+          options_from_collection_for_select(
+            @${2:collection},
+            :${3:id},
+            :${4:name},
+            f.object.${1:resource_id}
+          ),
+          { ${5:include_blank: "${6:Please select one}"} },
+          { ${7:class: "${8:form-control}"} })$0
+    """
+
+  'select_enum_field':
+    'prefix': 'fef'
+    'body': """
+      = f.select(
+          :${1:enum_attribute},
+          f.object.class.${1:enum_attribute}s.to_a.map {|e|
+            [
+              e.first, # label
+              e.first
+            ]
+          },
+          { },
+          { })$0
+    """
+
+  'select_tag':
+    'prefix': 'st'
+    'body': """
+      = select_tag(
+        :${1:color_id},
+        options_from_collection_for_select(
+          @${2:colors},
+          :${3:id},
+          :${4:name},
+          params[:${1:color_id}]
+        ),
+        { ${5:include_blank: "${6:Please select one}"} },
+        { ${7:class: "${8:form-control}"} }
+      ) $0
+    """
+
+  'checkbox':
+    'prefix': 'fcb'
+    'body': '= f.check_box :${1:method}, ${2:options}, ${3:true}, ${4:false}'
+
+  'file_field':
+    'prefix': 'fff'
+    'body': '= f.file_field :${1:file}, accept: "${2:video/mp4}", class: "form-control"'
+
+  'submit_field':
+    'prefix': 'fs'
+    'body': '= f.submit "${1:Save / Update}"${2:, class: "${3:btn btn-primary"}}$0'
+
+  'submit_tag':
+    'prefix': 'sut'
+    'body': '= submit_tag "${1:Search!}"${2:, class: "${4:btn btn-${3:primary}}"}$0'
+
+  'input':
+    'prefix': 'f.'
+    'body': '= f.${1:text}_field :${2:field}${3:, class: "${4:form-control}"}$0'
