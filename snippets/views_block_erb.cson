@@ -1,3 +1,8 @@
+'.text.html.ruby, .text.html.erb, .source.js.rails, .yaml':
+  'erb_render_block':
+    'prefix': '='
+    'body': '<%= $1 %>'
+
 '.text.html.erb > .embedded.line.erb > .source.ruby,
 .text.html.erb > .embedded.line.erb > .embedded.end.erb,
 .text.html.ruby > .embedded,

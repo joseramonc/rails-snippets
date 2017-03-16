@@ -1,11 +1,11 @@
 # Snippets shared across all ruby html.* sources
-# This snippets are invoked inside ruby blocks
+# This snippets are invoked inside ruby blocks in views
 #
-# .html.haml
+# view.html.haml
 # %html
 #   = lt[tab]
 #
-# .html.erb
+# view.html.erb
 # <html>
 #   <%= lt[tab] %>
 # </html>
@@ -90,6 +90,16 @@
     'prefix': 'style'
     'description': "style: 'cssprop: value;'"
     'body': 'style: "${1:display: none;}"$0'
+
+  'toggle key-value':
+    'prefix': 'toggle'
+    'description': "toggle: :tooltip"
+    'body': 'toggle: ${1:tooltip}$0'
+
+  'title key-value':
+    'prefix': 'title'
+    'description': "title: :hola"
+    'body': 'title: ${1:hola}$0'
 
   'placeholder key-value':
     'prefix': 'ph'

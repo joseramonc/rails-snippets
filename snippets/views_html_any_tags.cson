@@ -1,3 +1,12 @@
+# Snippets triggered in views
+#
+# index.html.*
+# <html>
+#   <body>
+#     <div dataa[tab]></div>
+#   </body>
+# </html>
+
 '.meta.tag.any.html':
 
   'data-attribute':
