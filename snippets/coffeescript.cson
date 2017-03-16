@@ -1,4 +1,19 @@
+# Snippets triggered in .coffee
+#
+# document[tab]
+# 
+
 '.source.coffee':
+  '$(document)':
+    'prefix': '$doc'
+    'description': "$(document)$0"
+    'body': '$(document)'
+
+  '$(document)':
+    'prefix': 'document'
+    'description': "$(document)$0"
+    'body': '$(document)'
+
   'Turbolinks load':
     'prefix': 'load'
     'description': "$(document).on 'turbolinks:load', ->"
@@ -6,6 +21,14 @@
 
   'Document on keypress':
     'prefix': 'dokeypress'
+    'description': "$(document).on 'keypress', '.selector', ->"
+    'body': """
+      $(document).on "keypress", ".$1", ->
+        $0
+    """
+
+  '$(document).on keypress':
+    'prefix': '$(document).onkp'
     'description': "$(document).on 'keypress', '.selector', ->"
     'body': """
       $(document).on "keypress", ".$1", ->
@@ -20,6 +43,14 @@
         $0
     """
 
+  '$(document).on keyup':
+    'prefix': '$(document).onku'
+    'description': "$(document).on 'keyup', '.selector', ->"
+    'body': """
+      $(document).on "keyup", ".$1", ->
+        $0
+    """
+
   'Document on click':
     'prefix': 'doclick'
     'description': "$(document).on 'click', '.selector', ->"
@@ -28,8 +59,24 @@
         $0
     """
 
+  '$(document) on click':
+    'prefix': '$(document).oncl'
+    'description': "$(document).on 'click', '.selector', ->"
+    'body': """
+      $(document).on "click", ".$1", ->
+        $0
+    """
+
   'Document on change':
     'prefix': 'dochange'
+    'description': "$(document).on 'change', '.selector', ->"
+    'body': """
+      $(document).on "change", ".$1", ->
+        $0
+    """
+
+  '$(document).on change':
+    'prefix': '$(document).onch'
     'description': "$(document).on 'change', '.selector', ->"
     'body': """
       $(document).on "change", ".$1", ->
