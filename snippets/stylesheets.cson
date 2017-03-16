@@ -1,0 +1,20 @@
+'.source.scss,
+.source.css.scss':
+
+  '@include media-break-point-up bootstrap 4':
+    'prefix': 'b4media'
+    'body': """
+      @include media-breakpoint-${1:up}(${2:xl}) {
+        $3
+      }
+      $0
+    """
+
+  '@media bootstrap 3':
+    'prefix': 'b3media'
+    'body': """
+      @media (${1:max}-width: ${2:$screen-lg-min}) {
+        $3
+      }
+      $0
+    """
