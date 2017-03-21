@@ -74,17 +74,17 @@
 
   'method':
     'prefix': 'method'
-    'body': 'method: :${1:post}'
+    'body': 'method: :${1:post}$0'
 
   'class key-value':
     'prefix': 'class'
     'description': "class: 'class'"
-    'body': 'class: "$1"$0'
+    'body': 'class: "${1:btn}"$0'
 
   'id key-value':
     'prefix': 'id'
     'description': "id: 'id'"
-    'body': 'id: "$1"$0'
+    'body': 'id: "${1:nav}"$0'
 
   'style key-value':
     'prefix': 'style'
