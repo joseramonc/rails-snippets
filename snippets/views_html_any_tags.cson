@@ -28,6 +28,10 @@
     'prefix': 'style'
     'description': 'style="cssprop: value;"'
     'body': 'style="${1:display: none;}"$0'
+  'style=':
+    'prefix': 'style='
+    'description': 'style="cssprop: value;"'
+    'body': 'style="${1:display: none;}"$0'
 
   'placeholder':
     'prefix': 'placeholder'
