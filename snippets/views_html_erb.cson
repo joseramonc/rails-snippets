@@ -192,6 +192,16 @@
     'prefix': 'ntp'
     'body': '<%= number_to_percentage ${1:number} %>'
 
+  'I18n.t':
+    'prefix': '18t'
+    'description': '<%= I18n.t("key") %>'
+    'body': '<%= I18n.t("${1:search}") %>$0'
+
+  'I18n.l':
+    'prefix': '18l'
+    'description': '<%= I18n.l(DateTime.now, format: :short) %>'
+    'body': '<%= I18n.l(${1:${2:DateTime.now}, format: ${3:short}}}) %>$0'
+
   ##########################
   # Form and inputs
   ##########################

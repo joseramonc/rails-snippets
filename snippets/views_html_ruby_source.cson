@@ -120,3 +120,13 @@
     'prefix': 'dtt'
     'description': "toggle: :tooltip, title: 'hi'"
     'body': 'toggle: :tooltip, title: ${2:"${1:Hola!}"}$0'
+
+  'I18n.t':
+    'prefix': "18t"
+    'description': 'I18n.t("key")'
+    'body': 'I18n.t("$1:{search}")'
+
+  'I18n.l':
+    'prefix': '18l'
+    'description': 'I18n.l(date)'
+    'body': 'I18n.l(${1:${2:DateTime.now}, format: ${3:short}}})$0'
