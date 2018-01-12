@@ -66,6 +66,24 @@
       end
     """
 
+  'assert_changes':
+    'prefix': 'asc'
+    'description': 'assert_changes(expression, message = nil, from: UNTRACKED, to: UNTRACKED, &block)'
+    'body': """
+      assert_changes "${1:user.status}", from: ${2:nil}, to: ${3:nil} do
+        $0
+      end
+    """
+
+  'assert_no_changes':
+    'prefix': 'asnc'
+    'description': 'assert_no_changes(expression, message = nil, &block)'
+    'body': """
+      assert_no_changes "${1:user.status}" do
+        $0
+      end
+    """
+
   'assert_response':
     'prefix': 'asre'
     'body': 'assert_response :${1:success}'
