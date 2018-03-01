@@ -6,7 +6,7 @@
 
   'has_many_depedent':
     'prefix': 'hmd'
-    'body': 'has_many :${1:categories}, dependent: ${2:destroy}'
+    'body': 'has_many :${1:categories}, dependent: :${2:destroy}'
 
   'has_one':
     'prefix': 'ho'
