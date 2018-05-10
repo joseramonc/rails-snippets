@@ -1,24 +1,20 @@
 '.source.ruby, .source.ruby.rails .meta.rails.controller':
 
-  'logger.debug':
-    'prefix': 'logd'
-    'body': 'Rails.logger.debug { "${1:message}" }'
-
-  'logger.info':
-    'prefix': 'logi'
+  'Rails logger.info':
+    'prefix': 'rlog'
     'body': 'Rails.logger.info { "${1:message}" }'
 
-  'logger info':
-    'prefix': 'li'
-    'body': 'logger.info $1'
-
-  'logger info again':
+  'logger.info':
     'prefix': 'log'
     'body': 'logger.info $1'
 
   'logger.error':
     'prefix': 'loge'
     'body': 'Rails.logger.error { "${1:message}" }'
+
+  'logger.debug':
+    'prefix': 'logd'
+    'body': 'Rails.logger.debug { "${1:message}" }'
 
   'puts debugger':
     'prefix': 'puts*'
