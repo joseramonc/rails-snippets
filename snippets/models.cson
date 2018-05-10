@@ -84,9 +84,10 @@
     'prefix': '.fb'
     'body': '.find_by_${1:name}(${3:params[:${2:${1:name}}]})$0'
 
-  'where query':
+  'Where query':
     'prefix': '.where'
     'body': '.where(${1:attribute}: ${2:expected})$0'
+
   'where query':
     'prefix': '.we'
     'body': '.where(${1:attribute}: ${2:expected})$0'
