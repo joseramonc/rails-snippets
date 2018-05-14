@@ -31,3 +31,18 @@
       end
     """
 
+  'setup':
+    'prefix': 'set'
+    'body': """
+      setup do
+        ${1}
+      end
+    """
+
+  'teardown':
+    'prefix': 'tear'
+    'body': """
+      teardown do
+        ${1}
+      end
+    """
