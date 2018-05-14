@@ -60,3 +60,6 @@
     'prefix': 'asr'
     'body': 'assert_redirected_to ${1:users}_path$0'
 
+  'assert_selector':
+    'prefix': 'asl'
+    'body': 'assert_selector "${1:h1}", text: "${2:Hello}"'
