@@ -1,36 +1,4 @@
 '.source.ruby, .source.ruby.rails':
-  'it':
-    'prefix': 'it'
-    'body': """
-      it "$1" do
-        $2
-      end
-    """
-
-  'describe':
-    'prefix': 'describe'
-    'body': """
-      describe "when $1" do
-        $2
-      end
-    """
-
-  'context':
-    'prefix': 'context'
-    'body': """
-      context "when $1" do
-        $2
-      end
-    """
-
-  'test case':
-    'prefix': 'test'
-    'body': """
-      test "when ${1:method_or_case}" do
-        ${2:assert true}
-      end
-    """
-
   'assert':
     'prefix': 'ast'
     'body': 'assert ${1:true}${2:, "${3:expected ${1:true} to be true}"}'
@@ -91,3 +59,4 @@
   'assert_redirected_to':
     'prefix': 'asr'
     'body': 'assert_redirected_to ${1:users}_path$0'
+
