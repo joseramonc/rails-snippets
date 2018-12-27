@@ -26,6 +26,11 @@
     'prefix': 'lt'
     'description': 'link_to(name = nil, options = nil, html_options = nil, &block)'
     'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to'
+    'body': '<%= link_to "${1:text}", ${2:"#"} %>$0'
+
+  'link_to_class':
+    'prefix': 'ltc'
+    'description': 'link_to ..., class: class'
     'body': '<%= link_to "${1:text}", ${2:"#"}, ${4:class: "${3:btn btn-primary}"} %>$0'
 
   'link_to_method':
