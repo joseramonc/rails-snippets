@@ -214,7 +214,6 @@
         ${2:= render "shared/errors", object: ${1}}
         ${3:= f.text_field :${4:field}}
         ${0}
-      end
     """
 
   'form_tag':
@@ -227,7 +226,6 @@
             placeholder: "Search",
             class: "form-control"
         )
-      end
     """
 
   'f_label_field':
