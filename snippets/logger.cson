@@ -19,3 +19,7 @@
   'puts debugger':
     'prefix': 'puts*'
     'body': 'puts "****************************************"'
+
+  'log into file':
+    'prefix': 'debugfile'
+    'body': 'File.open("debugfile.txt", "w") { |file| file << $1 }'
