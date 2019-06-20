@@ -1,0 +1,48 @@
+'.source.ruby, .source.ruby.rails':
+  'it':
+    'prefix': 'it'
+    'body': """
+      it "$1" do
+        $2
+      end
+    """
+
+  'describe':
+    'prefix': 'describe'
+    'body': """
+      describe "when $1" do
+        $2
+      end
+    """
+
+  'context':
+    'prefix': 'context'
+    'body': """
+      context "when $1" do
+        $2
+      end
+    """
+
+  'test case':
+    'prefix': 'test'
+    'body': """
+      test "when ${1:method_or_case}" do
+        ${2:assert true}
+      end
+    """
+
+  'setup':
+    'prefix': 'set'
+    'body': """
+      setup do
+        ${1}
+      end
+    """
+
+  'teardown':
+    'prefix': 'tear'
+    'body': """
+      teardown do
+        ${1}
+      end
+    """
