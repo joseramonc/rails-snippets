@@ -52,7 +52,7 @@
     'prefix': 'asd'
     'description': 'assert_difference(expression, difference = 1, message = nil, &block)'
     'body': """
-      assert_difference("${1:User.count}") do
+      assert_difference -> { ${1:User.count} } do
         $2
       end
     """
@@ -61,7 +61,7 @@
     'prefix': 'asnd'
     'description': 'assert_no_difference(expression, message = nil, &block)'
     'body': """
-      assert_no_difference("${1:User.count}") do
+      assert_no_difference -> { ${1:User.count} } do
         $2
       end
     """
@@ -70,7 +70,7 @@
     'prefix': 'asc'
     'description': 'assert_changes(expression, message = nil, from: UNTRACKED, to: UNTRACKED, &block)'
     'body': """
-      assert_changes "${1:user.status}", from: ${2:nil}, to: ${3:nil} do
+      assert_changes -> { ${1:user.status} }, from: ${2:nil}, to: ${3:nil} do
         $0
       end
     """
@@ -79,7 +79,7 @@
     'prefix': 'asnc'
     'description': 'assert_no_changes(expression, message = nil, &block)'
     'body': """
-      assert_no_changes "${1:user.status}" do
+      assert_no_changes -> { ${1:user.status} } do
         $0
       end
     """
