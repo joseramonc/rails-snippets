@@ -6,7 +6,7 @@
     'prefix': 'class'
     'body': """
       class ${1:ClassName}
-        ${2:#code}
+        ${2:# code}
       end
     """
 
@@ -14,14 +14,15 @@
     'prefix': 'model'
     'body': """
       class ${1:User} ${2:< ${3:ApplicationRecord}}
-        ${4:# lot of code :D}
+        ${4:# code}
       end
     """
+
   'controller':
     'prefix': 'controller'
     'body': """
       class ${1:Users}Controller < ApplicationController
-        ${2:# lot of controller code :D}
+        ${2:# code}
       end
     """
 
@@ -29,7 +30,7 @@
     'prefix': 'module'
     'body': """
       module ${1:ModuleName}
-        ${2:#code}
+        ${2:# code}
       end
     """
 
@@ -39,16 +40,16 @@
       module ${1:ConcernName}
         extend ActiveSupport::Concern
         ${2:included do
-          ${3:# code ...}
+          ${3:# code }
         end}
 
-        # instance methods go here
+        # instance methods
         ${4:# def instance_method
         #
         # end}
 
         module ClassMethods
-          # static methods go here
+          # static methods
           ${5:# def static_method
           #
           # end}
@@ -60,37 +61,24 @@
     'prefix': '.each'
     'body': """
       .each do |${1:member}|
-        ${2:#code...}
-      end $3
+        ${2:${1:member}}$0
+      end
     """
 
   'each do':
     'prefix': '.e'
     'body': """
       .each do |${1:member}|
-        ${2:#code...}
-      end $3
+        ${2:${1:member}}$0
+      end
     """
 
   'each_with_index':
     'prefix': '.ewi'
     'body': """
       .each_with_index do |${1:member}, ${2:index}|
-        ${3:#code...}
-      end $4
-    """
-
-  'update_attribute':
-    'prefix': '.ua'
-    'body': '.update_attribute :${1:attribute}, "${2:new value}"'
-
-  'update_attributes':
-    'prefix': '.uas'
-    'body': """
-      .update_attributes(
-        ${1:attribute}: "${2:value1}",
-        ${3:attribute_2}: "${4:value2}"
-      )
+        ${3:${1:member}}$0
+      end
     """
 
   'elsif statement':
@@ -101,7 +89,7 @@
     'prefix': 'elsife'
     'body': """
       elsif ${1:true}
-        ${2:#code}
+        ${2:# code}
       else
     """
 
@@ -109,15 +97,15 @@
     'prefix': '=loop'
     'body': """
       ${1:array}.each do |${2:member}|
-        $3
+        ${3:${2:member}}$0
       end
     """
 
-  #just if not using atom official ruby syntax::
+  # just if not using atom official ruby syntax::
   'def':
     'prefix': 'def'
     'body': """
       def ${1:method}
-        ${2:#code}
+        ${2:# code}
       end
     """
