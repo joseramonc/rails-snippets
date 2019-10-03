@@ -95,3 +95,25 @@
   'where string':
     'prefix': '.wherel'
     'body': '.where("${1:attribute} LIKE ?", "%#{${2:expected}}%")$0'
+
+  'update_attribute':
+    'prefix': '.ua'
+    'body': '.update_attribute :${1:attribute}, "${2:new value}"'
+
+  'update_attributes':
+    'prefix': '.uas'
+    'body': """
+      .update_attributes(
+        ${1:attribute}: "${2:value1}",
+        ${3:attribute_2}: "${4:value2}"
+      )
+    """
+
+  '.tap':
+    'prefix': '.tap'
+    'body': """
+      .tap do |${1:base}|
+        ${2:${1:base}}
+        $0
+      end
+    """
