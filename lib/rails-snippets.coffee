@@ -1,12 +1,8 @@
-# much love to @eddorre <3 <3
 {Range} = require 'atom'
 {CompositeDisposable} = require 'atom'
 
-ERB_REGEX = '<%(=?|-?|#?)\s{2}(-?)%>'
-# matches the opening bracket
-ERB_OPENER_REGEX = '<%[\\=\\#\\-]?'
-# matches the closing bracket.
-ERB_CLOSER_REGEX = "-?%>"
+ERB_OPENING_BRACKET_REGEXP = '<%[\\=\\#\\-]?'
+ERB_CLOSING_BRACKET_REGEXP = "-?%>"
 
 module.exports =
   config:
@@ -21,13 +17,13 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-workspace', 'rails-snippets:toggleErb', => @toggleErb()
 
   toggleErb: ->
+    delegate = @
     editor = atom.workspace.getActiveTextEditor()
-    for selection in editor.getSelections() by 1
-      hasTextSelected = !selection.isEmpty()
-      selectedText = selection.getText()
-      delegate = @
+    editor.transact ->
+      for selection in editor.getSelections() by 1
+        hasTextSelected = !selection.isEmpty()
+        selectedText = selection.getText()
 
-      editor.transact ->
         selection.deleteSelectedText()
         currentCursor = selection.cursor
         # searching for opening and closing brackets
@@ -55,14 +51,14 @@ module.exports =
 
     # searching in the left range for an opening bracket
     foundOpeners = []
-    editor.getBuffer().scanInRange new RegExp(ERB_OPENER_REGEX, 'g'), leftRange, (result) ->
+    editor.getBuffer().scanInRange new RegExp(ERB_OPENING_BRACKET_REGEXP, 'g'), leftRange, (result) ->
       foundOpeners.push result.range
     # if found, setting a range for it, using the last match - the rightmost bracket found
     opener = foundOpeners[foundOpeners.length - 1] if foundOpeners
 
     # searching in the right range for an opening bracket
     foundClosers = []
-    editor.getBuffer().scanInRange new RegExp(ERB_CLOSER_REGEX, 'g'), rightRange, (result) ->
+    editor.getBuffer().scanInRange new RegExp(ERB_CLOSING_BRACKET_REGEXP, 'g'), rightRange, (result) ->
       foundClosers.push result.range
     # if found, setting a new range, using the first match - the leftmost bracket found
     closer = foundClosers[0] if foundClosers
