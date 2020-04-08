@@ -24,7 +24,7 @@
   'embedded link_to':
     'prefix': 'lt'
     'description': 'link_to(name = nil, options = nil, html_options = nil, &block)'
-    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to'
+    'descriptionMoreURL': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to'
     'body': 'link_to "${1:text}", ${2:"#"}'
 
   'embedded link_to_class':

@@ -8,44 +8,83 @@
         t.${2:string} :${3:name}
       end
     """
+    'description': 'create_table(table_name, **options)'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-create_table'
 
   'add_column':
     'prefix': 'dbac'
-    'body': 'add_column :${1:table_name}, :${2:column_name}, :${3:type}, ${4:default: ${5::value}}'
+    'body': 'add_column :${1:table_name}, :${2:column_name}, :${3:type}'
+    'description': 'add_column(table_name, column_name, type, **options)'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_column'
 
   'drop_table':
     'prefix': 'dbdt'
     'body': 'drop_table :${1:table_name}'
+    'description': 'drop_table(table_name, options = {})'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-drop_table'
+
+  'drop_table2':
+    'prefix': 'dbrmt'
+    'body': 'drop_table :${1:table_name}'
+    'description': 'drop_table(table_name, options = {})'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-drop_table'
 
   'rename_table':
-    'prefix': 'dbrt'
+    'prefix': 'dbrnt'
     'body': 'rename_table :${1:old_table_name}, :${2:new_table_name}'
+    'description': 'rename_table(table_name, new_name)'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-rename_table'
 
   'rename_column':
     'prefix': 'dbrnc'
     'body': 'rename_column :${1:table_name}, :${2:column_name}, :${3:new_column_name}'
+    'description': 'rename_column(table_name, column_name, new_column_name)'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-rename_column'
 
   'remove_column':
     'prefix': 'dbrmc'
     'body': 'remove_column :${1:table_name}, :${2:column_name}'
+    'description': 'remove_column(table_name, column_name, type = nil, options = {})'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-remove_column'
 
   'change_column':
     'prefix': 'dbcc'
     'body': 'change_column :${1:table_name}, :${2:column_name}, :${3:type}, ${4:default: 0}'
+    'description': 'change_column(table_name, column_name, type, options = {})'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_column'
 
   'add_index':
     'prefix': 'dbai'
     'body': 'add_index :${1:table_name}, :${2:column_name}${3:, {$4}}'
+    'description': 'add_index(table_name, column_name, options = {})'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_index'
+
+  'remove_index':
+    'prefix': 'dbrmi'
+    'body': 'remove_index :${1:table_name}, column: ${2::column_name}'
+    'description': 'remove_index(table_name, options = {})'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-remove_index'
 
   'add_foreign_key':
     'prefix': 'dbafk'
     'body': 'add_foreign_key :${1:from_table}, :${2:to_table}${3:, options = {}}'
+    'description': 'add_foreign_key(from_table, to_table, options = {})'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_foreign_key'
 
   'remove_foreign_key':
-    'prefix': 'dbrfk'
+    'prefix': 'dbrmfk'
     'body': 'remove_foreign_key :${1:from_table}, column: :${2:model_id}'
+    'description': 'remove_foreign_key(from_table, to_table = nil, **options)'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-remove_foreign_key'
 
-  'change_default':
+  'change_column_default':
     'prefix': 'dbcd'
-    'description': 'change_column_default(table_name, column_name, default)'
     'body': "change_column_default :${1:table_name}, :${2:column_name}, ${3:'new_default'}"
+    'description': 'change_column_default(table_name, column_name, default_or_changes)'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_column_default'
+
+  'change_column_null':
+    'prefix': 'dbcn'
+    'body': "change_column_null :${1:table_name}, :${2:column_name}, ${3:true}"
+    'description': 'change_column_null(table_name, column_name, null, default = nil)'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_column_null'

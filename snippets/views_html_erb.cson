@@ -25,7 +25,7 @@
   'link_to':
     'prefix': 'lt'
     'description': 'link_to(name = nil, options = nil, html_options = nil, &block)'
-    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to'
     'body': '<%= link_to "${1:text}", ${2:"#"} %>$0'
 
   'link_to_class':
@@ -55,7 +55,7 @@
   'button_to':
     'prefix': 'bt'
     'description': 'button_to(name = nil, options = nil, html_options = nil, &block)'
-    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-button_to'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-button_to'
     'body': '<%= button_to "${1:text}", ${2:path}, class: "${3:btn btn-primary}" %>$0'
 
   'image_tag':
@@ -365,13 +365,13 @@
   'form_options_from_collection_for_select':
     'prefix': 'ofcfs'
     'description': 'options_from_collection_for_select(collection, value_method, text_method, selected = nil)'
-    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-options_from_collection_for_select'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-options_from_collection_for_select'
     'body': 'options_from_collection_for_select(@${1:products}, :${2:id}, :${3:name}, ${4:form.object.${5:product_id}})$0'
 
   'form_options_for_select':
     'prefix': 'ofs'
     'description': 'options_for_select(container, selected = nil)'
-    'descriptionMoreUrl': 'http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-options_for_select'
+    'descriptionMoreURL': 'https://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-options_for_select'
     'body': 'options_for_select'
 
   'submit_tag':
